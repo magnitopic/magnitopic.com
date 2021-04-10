@@ -1,3 +1,5 @@
-#The sorce code for magnitopic.com
+# magnitopic.com Made with JamStack
 
-This code is a dum
+Source code for the [magnitopic.com](magnitopic.com) web page.
+
+All done in JamStack.
