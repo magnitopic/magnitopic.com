@@ -1,6 +1,10 @@
 #footer{
 	margin-top: 5px;
 	border: 1px solid;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-around;
 }
 
 #dMode{
@@ -11,4 +15,67 @@
 
 #text{
 	margin: 0;
+}
+
+#copyright{
+	text-decoration: none;
+	font-family: none;
+}
+
+#socials{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+#twitter{
+	background: #55ACEE;
+	color: white;
+	border-radius: 50%;
+	border: 2px solid #000000;
+	text-align: center;
+	font-size: 4.8vh;
+	width: 5.3vh;
+	height: 5.3vh;
+	margin: 1vh;
+	padding: 1px;
+}
+
+#youtube{
+  	color: #bb0000;
+	text-align: center;
+	font-size: 5vh;
+	width: 5vh;
+	height: 5vh;
+	margin: 1vh;
+}
+
+#github{
+	text-align: center;
+	font-size: 5vh;
+	width: 5vh;
+	height: 5vh;
+	margin: 1vh;
+	padding: 1px;
+}
+
+
+#flickr{
+	background: #f40083;
+  	color: white;border-radius: 50%;
+	border: 2px solid #000000;
+	text-align: center;
+	font-size: 4.4vh;
+	width: 5vh;
+	height: 5vh;
+	margin: 1vh;
+	padding: 1px;
+}
+
+#mail{
+	text-align: center;
+	font-size: 5vh;
+	width: 5vh;
+	height: 5vh;
+	margin: 1vh;
 }
