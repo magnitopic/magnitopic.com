@@ -1,9 +1,9 @@
-
+import Head from 'next/head';
 
 export default function index() {
 	return (
-		<div>
+		<h1>
 			Hello World
-		</div>
+		</h1>
 	)
 }

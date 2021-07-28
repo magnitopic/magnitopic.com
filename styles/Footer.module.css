@@ -1,0 +1,14 @@
+#footer{
+	margin-top: 5px;
+	border: 1px solid;
+}
+
+#dMode{
+	display: flex;
+	flex-direction: row;
+	padding: 1vw;
+}
+
+#text{
+	margin: 0;
+}
