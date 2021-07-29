@@ -10,8 +10,16 @@
 
 #links{
 	display: flex;
-
+	align-items: center;
 }
-.p{
-	margin: 2vh;
+
+.links {
+	color: inherit;
+	text-decoration: underline 0.15em rgba(255, 255, 255, 0);
+	transition: text-decoration-color 300ms;
+	margin: 2.5vh;
+}
+  
+.links:hover {
+	text-decoration-color: #fa7238;
 }
