@@ -8,6 +8,15 @@
 	font-size: 3vh;
 }
 
+#logo{
+	display: flex;
+	align-items: center;
+}
+
+#image{
+	margin-left: 1vh;
+}
+
 #links{
 	display: flex;
 	align-items: center;

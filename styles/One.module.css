@@ -1,6 +1,6 @@
 #left{
 	width: 50%;
-	height: 80vh;
+	height: 90vh;
 	font-size: 9vh;
 	display: flex;
 	align-items: center;
@@ -10,7 +10,7 @@
 
 #right{
 	width: 50%;
-	height: 80vh;
+	height: 90vh;
 	font-size: 3.7vh;
 	margin-right: 10vh;
 	line-height: 1.8;
