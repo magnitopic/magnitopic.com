@@ -1,0 +1,9 @@
+#two{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 85vh;
+	width: 100%;
+	background-color: #252E38;
+	color: #F0F0F1;
+}
