@@ -1,0 +1,17 @@
+#mainHeader{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-around;
+	height: 10vh;
+	width: 100%;
+	font-size: 3vh;
+}
+
+#links{
+	display: flex;
+
+}
+.p{
+	margin: 2vh;
+}
