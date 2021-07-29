@@ -1,53 +1,57 @@
 #footer{
 	margin-top: 5px;
-	border: 1px solid;
 	display: flex;
 	flex-direction: row;
 	align-items: center;
-	justify-content: space-around;
+	background: linear-gradient(150deg, #1a1a1a -3.38%, #3a2d2d 78.58%);
+	color: #ffffff;
 }
 
 #dMode{
 	display: flex;
+	flex: 1;
+	justify-content: center;
 	flex-direction: row;
 	padding: 1vw;
 }
 
-#text{
-	margin: 0;
-}
-
 #copyright{
+	display: flex;
+	flex: 1;
+	justify-content: center;
 	text-decoration: none;
 	font-family: none;
 }
 
 #socials{
 	display: flex;
+	flex: 1;
 	flex-direction: column;
 	align-items: center;
 }
 
+#text{
+	margin: 0;
+}
+
 #twitter{
-	background: #55ACEE;
-	color: white;
-	border-radius: 50%;
-	border: 1px solid #000000;
+	color: #55ACEE;
 	text-align: center;
-	font-size: 4.8vh;
+	font-size: 5vh;
 	width: 5.3vh;
 	height: 5.3vh;
 	margin: 1vh;
-	padding: 1px;
 }
 
 #youtube{
   	color: #bb0000;
+	background: linear-gradient(90deg, rgba(0,0,0,0) 10%, #ffffff 10%,#ffffff 90%, rgba(0,0,0,0) 90%);
 	text-align: center;
 	font-size: 5vh;
 	width: 5vh;
-	height: 5vh;
+	height: 3vh;
 	margin: 1vh;
+	line-height: 23px;
 }
 
 #github{
@@ -56,20 +60,18 @@
 	width: 5vh;
 	height: 5vh;
 	margin: 1vh;
-	padding: 1px;
 }
 
 
 #flickr{
-	background: #f40083;
-  	color: white;border-radius: 50%;
-	border: 2px solid #000000;
+	background: linear-gradient(90deg, rgba(0,0,0,0) 10%, #0063dc 10%, #0063dc 50%, #f40084 50%, #f40084 90%, rgba(0,0,0,0) 90%);
+	color: white;
 	text-align: center;
-	font-size: 4.4vh;
+	font-size: 5.4vh;
 	width: 5vh;
-	height: 5vh;
+	height: 4.3vh;
 	margin: 1vh;
-	padding: 1px;
+	line-height: 32px;
 }
 
 #mail{
