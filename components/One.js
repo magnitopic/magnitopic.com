@@ -7,7 +7,7 @@ const One= () => {
 				Hello World
 			</div>
 			<div id={styles.right}>
-				<p><b>Hey!</b> My name is Alejandro.<br/>I'm a programmer, photographer and all-around tech lover.<br/>
+				<p><b>Hey!</b> My name is Alejandro.<br/>I&apos;m a programmer, photographer and all-around tech lover.<br/>
 				Mainly a web developer but also Java, Python and some Arduino.</p>
 			</div>
 		</div>

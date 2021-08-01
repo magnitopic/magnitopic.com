@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import styles from '../styles/Header.module.css';
 
 const Header= () => {
@@ -9,9 +10,9 @@ const Header= () => {
 				<h3 id={styles.pageName} >Magnitopic</h3>
 			</a>
 			<div id={styles.links}>
-					<a class={styles.links} href=""><p>My work</p></a>
-					<a class={styles.links} href="/#contact"><p>Contact</p></a>
-					<a class={styles.links} href="https://altocodigo.blogspot.com/"><h4>Blogs</h4></a>
+					<Link class={styles.links} href=""><p>My work</p></Link>
+					<Link class={styles.links} href="/#contact"><p>Contact</p></Link>
+					<Link class={styles.links} href="https://altocodigo.blogspot.com/"><h4>Blogs</h4></Link>
 			</div>
 		</div>
 	)
