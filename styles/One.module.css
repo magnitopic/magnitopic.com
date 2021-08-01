@@ -3,6 +3,7 @@
 	height: 90vh;
 	font-size: 9vh;
 	display: flex;
+	padding-left: 10vh;
 	align-items: center;
 	justify-content: center;
 	text-decoration: underline;
