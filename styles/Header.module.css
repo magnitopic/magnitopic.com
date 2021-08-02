@@ -1,4 +1,4 @@
-#mainHeader{
+#mainHeader {
 	display: flex;
 	flex-direction: row;
 	align-items: center;
@@ -8,16 +8,16 @@
 	font-size: 3vh;
 }
 
-#logo{
+#logo {
 	display: flex;
 	align-items: center;
 }
 
-#pageName{
+#pageName {
 	margin-left: 1vh;
 }
 
-#links{
+#links {
 	display: flex;
 	align-items: center;
 }
@@ -27,8 +27,9 @@
 	text-decoration: underline 0.15em rgba(255, 255, 255, 0);
 	transition: text-decoration-color 300ms;
 	margin: 2.5vh;
+	cursor: pointer;
 }
-  
+
 .links:hover {
 	text-decoration-color: #fa7238;
 }
