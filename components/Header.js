@@ -3,6 +3,7 @@ import Link from 'next/link';
 import styles from '../styles/Header.module.css';
 
 const Header= () => {
+
 	return (
 		<div id={styles.mainHeader}>
 			<Link href="/" >
@@ -12,9 +13,9 @@ const Header= () => {
 				</a>
 			</Link>
 			<div id={styles.links}>
-					<Link class={styles.links} href=""><p>My work</p></Link>
-					<Link class={styles.links} href=""><p>Contact</p></Link>
-					<Link class={styles.links} href="https://altocodigo.blogspot.com/"><h4>Blogs</h4></Link>
+				<Link href=""><p className={styles.links}>My work</p></Link>
+				<Link href=""><p className={styles.links}>Contact</p></Link>
+				<Link href="https://altocodigo.blogspot.com/"><h4 className={styles.links}>Blogs</h4></Link>
 			</div>
 		</div>
 	)
