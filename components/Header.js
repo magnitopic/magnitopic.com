@@ -3,7 +3,6 @@ import Link from 'next/link';
 import styles from '../styles/Header.module.css';
 
 const Header= () => {
-
 	return (
 		<div id={styles.mainHeader}>
 			<Link href="/" >
