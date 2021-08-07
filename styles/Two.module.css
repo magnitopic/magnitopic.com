@@ -1,9 +1,10 @@
-#two{
+#two {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	flex-direction: column;
 	height: 85vh;
 	width: 100%;
-	background-color: #252E38;
-	color: #F0F0F1;
+	background-color: #252e38;
+	color: #f0f0f1;
 }

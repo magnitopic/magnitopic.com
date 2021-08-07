@@ -1,4 +1,4 @@
-#left{
+#left {
 	width: 50%;
 	height: 90vh;
 	font-size: 9vh;
@@ -8,7 +8,7 @@
 	text-decoration: underline;
 }
 
-#right{
+#right {
 	width: 50%;
 	height: 90vh;
 	font-size: 3.7vh;
@@ -19,6 +19,6 @@
 	justify-content: center;
 }
 
-#intro{
+#intro {
 	display: flex;
 }

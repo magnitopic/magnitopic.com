@@ -1,0 +1,14 @@
+.slideshow{
+	/* background-color: red; */
+	width: 100%;
+	height: 30vh;
+}
+
+.slideshowSlider{
+	
+}
+
+.slide{
+	height: 10vh;
+	width: auto;
+}
