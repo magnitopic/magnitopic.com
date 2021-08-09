@@ -6,7 +6,7 @@
 	height: 10vh;
 	width: 100%;
 	font-size: 3vh;
-	background: linear-gradient(100deg, #8e5eff, #ff9e5e);
+	background: inherit;
 	position: fixed;
 }
 

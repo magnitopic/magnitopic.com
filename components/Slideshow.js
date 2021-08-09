@@ -10,7 +10,7 @@ function Slideshow() {
 					<a>&#10094;</a>
 				</div>
 				<div className={styles.slide}>
-				<Image src="/../public/tech_icons/js.png" height="100" width="100"/>
+				<Image src="/tech_icons/js.png" height="100" width="100"/>
 				</div>
 				<div className={styles.transitors}>
 					<a>&#10095;</a>
