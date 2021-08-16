@@ -4,7 +4,7 @@ function SlideshowImage(props){
 	return (
 		<div>
 			{props.icons.map((images)=>(
-				<Image src={images.url} alt={images.name} height="100" width="100"/>
+				<Image title={images.name} src={images.url} alt={images.name} height="100" width="100"/>
 			))}
 		</div>
 	)

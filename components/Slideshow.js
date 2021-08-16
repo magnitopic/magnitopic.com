@@ -3,15 +3,15 @@ import Image from 'next/image';
 import SlideshowImage from './SlideshowImage';
 
 const images=[
-		{name:'js',url:'/tech_icons/js.png'},
-		{name:'css',url:'/tech_icons/css.png'},
-		{name:'java',url:'/tech_icons/java.png'},
-		{name:'html',url:'/tech_icons/html.png'},
-		{name:'docker',url:'/tech_icons/docker.png'},
-		{name:'arduino',url:'/tech_icons/arduino.png'},
-		{name:'express',url:'/tech_icons/express.png'},
-		{name:'git',url:'/tech_icons/git.png'},
-		{name:'jquery',url:'/tech_icons/jquery.png'}
+		{name:'Java Script',url:'/tech_icons/js.png'},
+		{name:'CSS',url:'/tech_icons/css.png'},
+		{name:'Java',url:'/tech_icons/java.png'},
+		{name:'HTML',url:'/tech_icons/html.png'},
+		{name:'Docker',url:'/tech_icons/docker.png'},
+		{name:'Arduino',url:'/tech_icons/arduino.png'},
+		{name:'Express',url:'/tech_icons/express.png'},
+		{name:'Git',url:'/tech_icons/git.png'},
+		{name:'jQuery',url:'/tech_icons/jquery.png'}
 	];
 
 function Slideshow() {
