@@ -7,7 +7,7 @@ const Header= () => {
 		<div id={styles.mainHeader}>
 			<Link href="/" >
 				<a id={styles.logo}>
-					<Image src='/tierra_transparente.png' alt="Picture of the author"width="37" height="37"/>
+					<Image src='/tierra_transparente.png' alt="Picture of the author"width="45" height="45"/>
 					<h3 id={styles.pageName} >Magnitopic</h3>
 				</a>
 			</Link>
