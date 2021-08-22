@@ -20,7 +20,8 @@
 
 .transitors {
 	font-size: 2.5vh;
-	width: 3vh;
+	width: 3.6vh;
+	height: 3.6vh;
 	cursor: pointer;
 	display: flex;
 	align-items: center;
@@ -30,10 +31,11 @@
 }
 
 .transitors :hover {
-	background-color: #4a4f53;
-	border-radius: 25%;
 	width: 3vh;
+	height: 3.6vh;
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	background-color: #4a4f53;
+	border-radius: 25%;
 }

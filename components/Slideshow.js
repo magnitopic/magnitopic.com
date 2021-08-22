@@ -3,7 +3,7 @@ import Image from 'next/image';
 import SlideshowImage from './SlideshowImage';
 
 const images=[
-		{name:'Java Script',url:'/tech_icons/js.png'},
+		{name:'Java Script',url:'/tech_icons/JS.png'},
 		{name:'CSS',url:'/tech_icons/css.png'},
 		{name:'Java',url:'/tech_icons/java.png'},
 		{name:'HTML',url:'/tech_icons/html.png'},
@@ -19,13 +19,13 @@ function Slideshow() {
 		<div className={styles.slideshow}>
 			<div className={styles.slideshowSlider}>
 				<div className={styles.transitors}>
-					<a>&#10094;</a>
+					<a className={styles.arow}>&#10094;</a>
 				</div>
 				<div className={styles.slide}>
 					<SlideshowImage icons={images}/>
 				</div>
 				<div className={styles.transitors}>
-					<a>&#10095;</a>
+					<a className={styles.arow}>&#10095;</a>
 				</div>
 			</div>
 		</div>
