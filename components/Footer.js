@@ -9,7 +9,7 @@ const Footer= () => {
 				<input type="checkbox" id="check"></input>
 			</div>
 			<div id={styles.copyright}>
-				<p>© Al rights reserved 2021</p>
+				<p>© All rights reserved 2021</p>
 			</div>
 			<div id={styles.socials}>
 				<p>Socials</p>
