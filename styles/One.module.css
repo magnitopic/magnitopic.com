@@ -24,4 +24,5 @@
 
 #intro {
 	display: flex;
+	background: linear-gradient(200deg, #38fad3, rgba(250, 56, 95, 0.993));
 }
