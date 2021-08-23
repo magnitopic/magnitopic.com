@@ -1,6 +1,7 @@
 import styles from '../styles/Slideshow.module.css';
 import Image from 'next/image';
 import SlideshowImage from './SlideshowImage';
+import Test from './Test';
 
 const images=[
 		{name:'Python',url:'/tech_icons/python.png',height:100,width:100},
@@ -16,28 +17,20 @@ const images=[
 		{name:'npm',url:'/tech_icons/npm.png',height:80,width:160},
 		{name:'Mongo DB',url:'/tech_icons/mongodb.png',height:100,width:300},
 		{name:'Markdown',url:'/tech_icons/markdown.png',height:90,width:120},
-		{name:'Raspberry Pi',url:'/tech_icons/rbpi.png',height:100,width:75},
+		{name:'Raspberry Pi',url:'/tech_icons/rbpi.png',height:100,width:80},
 		{name:'Linux',url:'/tech_icons/linux.png',height:100,width:90},
 		{name:'Windows',url:'/tech_icons/windows.png',height:100,width:100},
 		{name:'Git',url:'/tech_icons/git.png',height:100,width:100},
 		{name:'Docker',url:'/tech_icons/docker.png',height:100,width:120},
 		{name:'Arduino',url:'/tech_icons/arduino.png',height:90,width:120},
-		
 	];
 
 function Slideshow() {
 		return (
 		<div className={styles.slideshow}>
 			<div className={styles.slideshowSlider}>
-				<div className={styles.transitors}>
-					<a className={styles.arow}>&#10094;</a>
-				</div>
-				<div className={styles.slide}>
-					<SlideshowImage icons={images}/>
-				</div>
-				<div className={styles.transitors}>
-					<a className={styles.arow}>&#10095;</a>
-				</div>
+				{/* <SlideshowImage icons={images}/> */}
+				<Test/>
 			</div>
 		</div>
 	)
