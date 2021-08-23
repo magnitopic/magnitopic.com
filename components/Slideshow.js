@@ -30,7 +30,7 @@ function Slideshow() {
 		<div className={styles.slideshow}>
 			<div className={styles.slideshowSlider}>
 				{/* <SlideshowImage icons={images}/> */}
-				<Test/>
+				<Test images={images}/>
 			</div>
 		</div>
 	)
