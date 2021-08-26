@@ -37,7 +37,8 @@ return (
 	<div
 	className={styles.transitors} 
 	onClick={() => {
-		setIndex(index-1);
+		let result=index-1?(1):(index-1);
+		setIndex(result);
 	}}>
 		<a className={styles.arow}>&#10094;</a>
 	</div>
@@ -53,7 +54,8 @@ return (
 	<div
 	className={styles.transitors} 
 	onClick={() => {
-		setIndex(index+1);
+		let result=index+1===2?0:index+1
+		setIndex(result);
 	}}>
 		<a className={styles.arow}>&#10095;</a>
 	</div>
