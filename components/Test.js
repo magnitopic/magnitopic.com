@@ -54,7 +54,7 @@ return (
 	<div
 	className={styles.transitors} 
 	onClick={() => {
-		let result=index+1===2?0:index+1
+		let result=index+1>==2?0:index+1
 		setIndex(result);
 	}}>
 		<a className={styles.arow}>&#10095;</a>
