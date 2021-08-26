@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import styles from '../styles/Test.module.css';
 import Image from 'next/image'
 
-const colors = ["#0088FE", "#00C49F", "#FFBB28"];
-const delay = 2500;
+const colors = ["#0088FE", "#00C49F"];
+const delay = 3000;
 
 const Test= (props) =>  {
 const images=props.images
@@ -32,10 +32,12 @@ React.useEffect(() => {
   }, [index]);	
 
 return (
+
+	// This is a temporary fix, the final version should be more spaced and have the trasitors to move bettwen the stages
 	<>
-	<div className={styles.transitors}>
+	{/* <div className={styles.transitors}>
 		<a className={styles.arow}>&#10094;</a>
-	</div>
+	</div> */}
 	<div className={styles.slideshow}>
 		<div
 			className={styles.slideshowSlider}
@@ -45,9 +47,9 @@ return (
 			))}
 		</div>
 	</div>
-	<div className={styles.transitors}>
+	{/* <div className={styles.transitors}>
 		<a className={styles.arow}>&#10095;</a>
-	</div>
+	</div> */}
 	</>
 );
 }
