@@ -5,8 +5,7 @@ import Image from 'next/image'
 const colors = ["#0088FE", "#00C49F"];
 const delay = 3000;
 
-const Test= (props) =>  {
-const images=props.images
+const Test= ({images}) =>  {
 const [index, setIndex] = React.useState(0);
 const timeoutRef = React.useRef(null);
 

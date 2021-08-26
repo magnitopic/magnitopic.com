@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import styles from '../styles/Slideshow.module.css';
 
-function SlideshowImage(props){
+function SlideshowImage({images}){
 	function prev(){
 
 	}
@@ -16,7 +16,7 @@ function SlideshowImage(props){
 			<a className={styles.arow} onClick={prev}>&#10094;</a>
 		</div>
 		<div className={styles.slide}>
-		{props.icons.map((images)=>(
+		{images.map((images)=>(
 			<div key={images}>
 				<Image key={images.id} title={images.name} src={images.url} alt={images.name} height={images.height} width={images.width}/>
 			</div>
