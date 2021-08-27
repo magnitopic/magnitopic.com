@@ -1,7 +1,6 @@
 import styles from '../styles/Slideshow.module.css';
 import Image from 'next/image';
 import SlideshowImage from './SlideshowImage';
-import Test from './Test';
 
 const images=[
 		{name:'Python',url:'/tech_icons/python.png',height:100,width:100},
@@ -29,8 +28,7 @@ function Slideshow() {
 		return (
 		<div className={styles.slideshow}>
 			<div className={styles.slideshowSlider}>
-				{/* <SlideshowImage icons={images}/> */}
-				<Test images={images}/>
+			<SlideshowImage images={images}/>
 			</div>
 		</div>
 	)

@@ -14,15 +14,27 @@
 	width: 80%;
 }
 
-.slide {
-	display: flex;
-	align-items: center;
-	justify-content: space-around;
-	flex-wrap: wrap;
+/* Slideshow */
+
+.slideshowImages{
+	white-space: nowrap;
+	transition: ease 1000ms;
 }
 
+.inerSlideshow{
+	margin: 0 auto;
+	overflow: hidden;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex-direction: row;
+	width: 85%;
+}
+
+/* Buttons */
+
 .transitors {
-	font-size: 40px;
+	font-size: 30px;
 	display:block;
 	height: 50px;
 	width: 50px;
