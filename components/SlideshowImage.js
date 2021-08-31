@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styles from '../styles/Slideshow.module.css';
+import CircleButton from './ui/CircleButton';
 import Image from 'next/image'
 
 const Test= ({images}) =>  {
@@ -37,7 +38,7 @@ return (
 		let result=index-1?(1):(index-1);
 		setIndex(result);
 	}}>
-		<a className={styles.arow}>&#10094;</a>
+		<CircleButton icon={"8249"}/>
 	</div>
 
 	<div className={styles.inerSlideshow}>
@@ -56,7 +57,7 @@ return (
 		let result=index+1>=2?0:index+1
 		setIndex(result);
 	}}>
-		<a className={styles.arow}>&#10095;</a>
+		<CircleButton icon={"8250"}/>
 	</div>
 	</>
 );

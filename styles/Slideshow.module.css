@@ -30,22 +30,3 @@
 	flex-direction: row;
 	width: 85%;
 }
-
-/* Buttons */
-
-.transitors {
-	font-size: 30px;
-	display:block;
-	height: 50px;
-	width: 50px;
-	border-radius: 50%;
-	cursor: pointer;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	background-color: #42474B;
-}
-
-.transitors :hover {
-	opacity: 0.7;
-}
