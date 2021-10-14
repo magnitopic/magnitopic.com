@@ -8,7 +8,7 @@ const [index, setIndex] = React.useState(0);
 const timeoutRef = React.useRef(null);
 const delay = 5000;
 
-
+//React functions to change the state of the Slider
 function resetTimeout() {
 	if (timeoutRef.current) {
 	clearTimeout(timeoutRef.current);
@@ -30,6 +30,8 @@ React.useEffect(() => {
     };
   }, [index]);	
 
+
+//Actual rendered page
 return (
 	<>
 	<div
