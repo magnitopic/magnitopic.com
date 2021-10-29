@@ -9,11 +9,10 @@ const Two= () => {
 	return (
 		<>
 		<div
-		className={styles.downArow}
 		onClick={() => {
 			window.scrollTo({top: 1200,behavior: 'smooth'});
 		}}>
-			<CircleButton icon={"8595"} />
+			<div className={styles.downArow}>&#129047;</div>
 		</div>
 		<div id={styles.two}>
 			<h1>Technologies I&apos;ve worked with</h1>
