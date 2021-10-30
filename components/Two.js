@@ -1,16 +1,21 @@
 import styles from '../styles/Two.module.css';
-import React, {useEffect} from 'react';
+import React, {useState} from 'react';
 import Slideshow from './Slideshow';
 import Repos from './Repos';
 import CircleButton from './ui/CircleButton';
 
+function test() {
+	console.log("Cliked");
+}
 
 const Two= () => {
+
+
 	return (
 		<>
 		<div
 		onClick={() => {
-			window.scrollTo({top: 1200,behavior: 'smooth'});
+			window.scrollBy({top: (window.innerHeight*0.9), behavior: 'smooth'});
 		}}>
 			<div className={styles.downArow}>&#129047;</div>
 		</div>

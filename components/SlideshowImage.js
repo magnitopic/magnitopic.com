@@ -45,8 +45,7 @@ return (
 
 	<div className={styles.inerSlideshow}>
 		<div
-			className={styles.slideshowImages}
-			style={{ transform: `translate3d(${-index * 100}%, 0, 0)` }}>
+			className={styles.slideshowImages}>
 			{images.map((images) => (
 			<Image key={images.id} title={images.name} src={images.url} alt={images.name} height={images.height} width={images.width}/>
 			))}

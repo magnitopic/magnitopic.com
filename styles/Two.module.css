@@ -17,6 +17,7 @@
 	z-index: 1;
 	animation: mymove 2.5s;
 	animation-iteration-count:infinite;
+	cursor: pointer;
 }
 
 @keyframes mymove {
