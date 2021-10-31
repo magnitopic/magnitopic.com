@@ -4,6 +4,7 @@ import CircleButton from './ui/CircleButton';
 import Image from 'next/image'
 
 const Test= ({images}) =>  {
+
 const [index, setIndex] = React.useState(0);
 const timeoutRef = React.useRef(null);
 const delay = 5000;
@@ -28,7 +29,7 @@ React.useEffect(() => {
     return () => {
       resetTimeout();
     };
-  }, [index]);	
+  }, [index]);
 
 
 //Actual rendered page
