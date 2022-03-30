@@ -18,7 +18,6 @@ const Footer= () => {
 					<a href="https://www.youtube.com/c/alejandromagnitopic" className="fa fa-youtube-play" id={styles.youtube}></a>
 					<a href="https://github.com/magnitopic" className="fa fa-github" id={styles.github}></a>
 					<a href="https://www.flickr.com/photos/160405600@N04/" className="fa fa-flickr" id={styles.flickr}></a>
-					
 				</div>
 			</div>
 		</div>

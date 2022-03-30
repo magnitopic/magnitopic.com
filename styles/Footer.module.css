@@ -3,21 +3,19 @@
 	display: flex;
 	flex-direction: row;
 	align-items: center;
+	justify-content: space-around;
 	background: linear-gradient(150deg, #1a1a1a -3.38%, #3a2d2d 78.58%);
 	color: #ffffff;
 }
 
 #dMode {
 	display: flex;
-	flex: 1;
 	justify-content: center;
 	flex-direction: row;
-	padding: 1vw;
 }
 
 #copyright {
 	display: flex;
-	flex: 1;
 	justify-content: center;
 	text-decoration: none;
 	font-family: none;
@@ -25,7 +23,6 @@
 
 #socials {
 	display: flex;
-	flex: 1;
 	flex-direction: column;
 	align-items: center;
 }
@@ -40,7 +37,7 @@
 	font-size: 5vh;
 	width: 5.3vh;
 	height: 5.3vh;
-	margin: 1vh;
+	margin: .5rem;
 }
 
 #youtube {
@@ -50,8 +47,8 @@
 	font-size: 5vh;
 	width: 5vh;
 	height: 2vh;
-	margin: 1vh;
-	line-height: 23px;
+	margin: .5rem;
+	line-height: .4em;
 }
 
 #github {
@@ -59,7 +56,7 @@
 	font-size: 5vh;
 	width: 5vh;
 	height: 5vh;
-	margin: 1vh;
+	margin: .5rem;
 }
 
 #flickr {
@@ -78,7 +75,7 @@
 	width: 5vh;
 	height: 3vh;
 	margin: 1vh;
-	line-height: 32px;
+	line-height: .4em;
 }
 
 #mail {
