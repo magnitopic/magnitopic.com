@@ -4,8 +4,10 @@
 	flex-direction: row;
 	align-items: center;
 	justify-content: space-around;
+	flex-wrap: wrap;
 	background: linear-gradient(150deg, #1a1a1a -3.38%, #3a2d2d 78.58%);
 	color: #ffffff;
+	font-size: 1.3em;
 }
 
 #dMode {
@@ -19,6 +21,7 @@
 	justify-content: center;
 	text-decoration: none;
 	font-family: none;
+	margin: 1.5em 0px;
 }
 
 #socials {
@@ -27,36 +30,28 @@
 	align-items: center;
 }
 
-#text {
-	margin: 0;
-}
-
 #twitter {
 	color: #55acee;
 	text-align: center;
-	font-size: 5vh;
-	width: 5.3vh;
-	height: 5.3vh;
-	margin: .5rem;
+	margin: 0.5rem;
+	font-size: 2em;
 }
 
 #youtube {
 	color: #bb0000;
+	margin-right: 0.2em;
+	color: #bb0000;
 	background: linear-gradient(90deg, rgba(0, 0, 0, 0) 10%, #ffffff 10%, #ffffff 90%, rgba(0, 0, 0, 0) 90%);
 	text-align: center;
-	font-size: 5vh;
-	width: 5vh;
-	height: 2vh;
-	margin: .5rem;
-	line-height: .4em;
+	margin: 0.5rem;
+	line-height: 0.4em;
+	font-size: 2em;
 }
 
 #github {
 	text-align: center;
-	font-size: 5vh;
-	width: 5vh;
-	height: 5vh;
-	margin: .5rem;
+	margin: 0.5rem;
+	font-size: 2em;
 }
 
 #flickr {
@@ -69,19 +64,7 @@
 		#f40084 90%,
 		rgba(0, 0, 0, 0) 90%
 	);
-	color: white;
-	text-align: center;
-	font-size: 5.4vh;
-	width: 5vh;
-	height: 3vh;
-	margin: 1vh;
-	line-height: .4em;
-}
-
-#mail {
-	text-align: center;
-	font-size: 5vh;
-	width: 5vh;
-	height: 5vh;
-	margin: 1vh;
+	margin: 0.5rem;
+	line-height: 0.4em;
+	font-size: 2em;
 }

@@ -17,7 +17,7 @@ const Two= () => {
 		onClick={() => {
 			window.scrollBy({top: (window.innerHeight*0.9), behavior: 'smooth'});
 		}}>
-			<div className={styles.downArow}>&#129047;</div>
+			{/* <div className={styles.downArow}>&#129047;</div> */}
 		</div>
 		<div id={styles.two}>
 			<h1>Technologies I&apos;ve worked with</h1>

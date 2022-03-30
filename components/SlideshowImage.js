@@ -1,9 +1,6 @@
 import Image from "next/image";
 
 const Test = ({ images }) => {
-	
-
-	//Actual rendered page
 	return (
 		<>
 			{images.map((images) => (

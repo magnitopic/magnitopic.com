@@ -58,8 +58,6 @@ const Slideshow = () => {
 		
 	return (
 		<div className={styles.slideshow}>
-
-			
 			<CircleButton
 				icon={"8249"}
 				onClick={() => {

@@ -5,14 +5,14 @@ const Footer= () => {
 		<>
 		<div id={styles.footer}>
 			<div id={styles.dMode}>
-				<p id={styles.text} >Activate Dark Mode:</p>
+				Activate Dark Mode:
 				<input type="checkbox" id="check"></input>
 			</div>
 			<div id={styles.copyright}>
-				<p>© All rights reserved 2021</p>
+				© All rights reserved 2021
 			</div>
 			<div id={styles.socials}>
-				<p>Socials</p>
+				Socials
 				<div>
 					<a href="https://twitter.com/Magnitopic" className="fa fa-twitter" id={styles.twitter}></a>
 					<a href="https://www.youtube.com/c/alejandromagnitopic" className="fa fa-youtube-play" id={styles.youtube}></a>
