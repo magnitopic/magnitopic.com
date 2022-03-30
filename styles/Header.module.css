@@ -3,9 +3,10 @@
 	flex-direction: row;
 	align-items: center;
 	justify-content: space-around;
-	height: 10vh;
+	flex-wrap: wrap;
+	height: fit-content;
 	width: 100%;
-	font-size: 3vh;
+	font-size: 2rem;
 	background: linear-gradient(200deg, #38fad3, rgba(250, 56, 95, 0.993));
 	position: fixed;
 	z-index: 10;
@@ -17,7 +18,8 @@
 }
 
 #pageName {
-	margin-left: 1vh;
+	margin: 0px;
+	margin: 1rem;
 }
 
 #links {
@@ -29,7 +31,7 @@
 	color: inherit;
 	text-decoration: underline 0.15em rgba(255, 255, 255, 0);
 	transition: text-decoration-color 300ms;
-	margin: 2.5vh;
+	margin: 1.5rem;
 	cursor: pointer;
 }
 
