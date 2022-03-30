@@ -38,3 +38,9 @@
 .links:hover {
 	text-decoration-color: #fa7238;
 }
+
+@media only screen and (max-width: 600px) {
+	#mainHeader {
+		position: static;
+	}
+}
