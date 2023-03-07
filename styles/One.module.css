@@ -19,14 +19,22 @@
 }
 
 #intro {
-	height: 55rem;
+	height: 100vh;
 	display: flex;
-	flex-wrap: wrap;
 	background: linear-gradient(200deg, #38fad3, rgba(250, 56, 95, 0.993));
 }
 
-@media only screen and (max-width: 600px) {
+@media screen and (max-width: 1024px) {
+	#intro {
+		flex-direction: column;
+	}
 	#right {
 		text-align: center;
+		align-items: flex-start;
+		margin: 0 2rem;
+	}
+	#left{
+		align-items: flex-end;
+		margin-bottom: 2rem;
 	}
 }
