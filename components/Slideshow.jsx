@@ -1,6 +1,6 @@
 import styles from "../styles/Slideshow.module.css";
-import SlideshowImage from "./SlideshowImage";
-import CircleButton from "./ui/CircleButton";
+import SlideshowImage from "./SlideshowImage.jsx";
+import CircleButton from "./ui/CircleButton.jsx";
 import Image from "next/image";
 import React, { useState, useEffect } from "react";
 

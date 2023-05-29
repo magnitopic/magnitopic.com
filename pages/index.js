@@ -1,6 +1,6 @@
-import Header from '../components/Header';
-import One from '../components/One';
-import Two from '../components/Two';
+import Header from '../components/Header.jsx';
+import One from '../components/One.jsx';
+import Two from '../components/Two.jsx';
 
 export default function index() {
 	return (

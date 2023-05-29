@@ -2,7 +2,7 @@ import styles from '../styles/Two.module.css';
 import React, {useState} from 'react';
 import Slideshow from './Slideshow';
 import Repos from './Repos';
-import CircleButton from './ui/CircleButton';
+import CircleButton from './ui/CircleButton.jsx';
 
 function test() {
 	console.log("Cliked");

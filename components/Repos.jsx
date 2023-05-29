@@ -1,4 +1,4 @@
-import Card from './ui/Card.js';
+import Card from './ui/Card.jsx';
 import styles from '../styles/Repos.module.css'
 
 function Repos(){
