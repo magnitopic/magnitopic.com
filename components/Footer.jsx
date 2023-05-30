@@ -4,10 +4,6 @@ const Footer= () => {
 	return (
 		<>
 		<div id={styles.footer}>
-			<div id={styles.dMode}>
-				Activate Dark Mode:
-				<input type="checkbox" id="check"></input>
-			</div>
 			<div id={styles.copyright}>
 				© All rights reserved 2021
 			</div>

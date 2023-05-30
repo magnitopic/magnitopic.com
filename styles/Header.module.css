@@ -7,7 +7,8 @@
 	height: fit-content;
 	width: 100%;
 	font-size: 2rem;
-	background: linear-gradient(200deg, #38fad3, rgba(250, 56, 95, 0.993));
+	background: #1e1f29;
+	color: #383a98;
 	position: fixed;
 	z-index: 10;
 }
@@ -36,7 +37,7 @@
 }
 
 .links:hover {
-	text-decoration-color: #fa7238;
+	text-decoration-color: #a495ff;
 }
 
 @media only screen and (max-width: 736px) {
