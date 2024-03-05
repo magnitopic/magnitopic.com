@@ -36,7 +36,7 @@ function App() {
 							Hello, I'm Alex
 						</h1>
 						<p className="text-2xl text-blue-300">
-							I'm a software developer and student at <a className="italic">42Madrid</a>
+							I'm a software developer and student at <span className="italic">42Madrid</span>
 						</p>
 					</div>
 				</div>
