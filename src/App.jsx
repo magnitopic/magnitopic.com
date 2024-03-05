@@ -9,16 +9,16 @@ function App() {
 				</div>
 				<div className="flex gap-12 align-middle justify-around flex-1 whitespace-nowrap">
 					<p className="text-blue-300 text-xl font-bold underline flex cursor-pointer">
-						<a href="#">About me</a>
+						<a href="/#">About me</a>
 					</p>
 					<p className="text-blue-300 text-xl font-bold underline flex cursor-pointer">
-						<a href="#">Projects</a>
+						<a href="/#">Projects</a>
 					</p>
 					<p className="text-blue-300 text-xl font-bold underline flex cursor-pointer">
-						<a href="#">Activities</a>
+						<a href="/#">Activities</a>
 					</p>
 					<p className="text-blue-300 text-xl font-bold underline flex cursor-pointer">
-						<a href="#">Contact</a>
+						<a href="/#">Contact</a>
 					</p>
 				</div>
 			</header>
