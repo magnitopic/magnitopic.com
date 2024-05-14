@@ -23,7 +23,6 @@ Hello everyone, today we are going to install and configure **Raspberry Pi OS Li
 For hardware you can install this it in whatever you want, but keep in mind that this OS is optimized for Raspberry Pi products and that 4GB of storage are recommended.
 I'll be using a _Raspberry Pi Zero W_. With this out of the way let's get to the fun part.
 
-
 After installing Raspbian Lite form the [RaspberryPi download page](https://www.raspberrypi.com/software/operating-systems/), next flash the image to the SD card.
 
 ## Enabling SSH
@@ -77,7 +76,6 @@ interface wlan0
 ```
 
 > In this example it will apply if your connected by WiFi, for Ethernet use `eth0` instead of `wlan0`
-
 
 And for more settings type on your console `sudo raspi-config`
 
