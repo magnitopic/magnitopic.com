@@ -1,13 +1,13 @@
 ---
-title: "Welcome to Doks"
+title: "Hello! I'm Alejandro Magnitopic"
 description: ""
-lead: "Congrats on setting up a new Doks project!"
+lead: "Software developer and student at 42Madrid"
 date: 2023-09-07T16:33:54+02:00
 lastmod: 2023-09-07T16:33:54+02:00
 draft: false
 seo:
-  title: "Welcome to Doks" # custom title (optional)
-  description: "" # custom description (recommended)
-  canonical: "" # custom canonical URL (optional)
-  noindex: false # false (default) or true
+  title: "Magnitopic | Main page"
+  description: "The main page of my personal portfolio page"
+  canonical: ""
+  noindex: false
 ---
