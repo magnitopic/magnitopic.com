@@ -9,3 +9,8 @@ This repository contains the code to my personal web page.
 It is made following the Jamstack architecture. With [Next.JS](https://nextjs.org/), a [React JS](https://reactjs.org/) framework. Deployed in [Netlify](https://www.netlify.com/).
 
 ![Logo](public/tierra_transparente.png)
+
+
+## Project Stack
+
+Node 22.14.0
