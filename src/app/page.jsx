@@ -22,13 +22,25 @@ export default function Home() {
 						</h2>
 					</div>
 					<div className="flex flex-row gap-5 text-3xl w-fit">
-						<Link href="https://www.linkedin.com/in/magnitopic/">
+						<Link
+							href="https://www.linkedin.com/in/magnitopic/"
+							target="_blank"
+							rel="noopener noreferrer"
+						>
 							<i className="fa fa-linkedin" />
 						</Link>
-						<Link href="https://github.com/magnitopic">
+						<Link
+							href="https://github.com/magnitopic"
+							target="_blank"
+							rel="noopener noreferrer"
+						>
 							<i className="fa fa-github" />
 						</Link>
-						<Link href="https://www.youtube.com/@Magnitopic">
+						<Link
+							href="https://www.youtube.com/@Magnitopic"
+							target="_blank"
+							rel="noopener noreferrer"
+						>
 							<i className="fa fa-youtube-play" />
 						</Link>
 					</div>

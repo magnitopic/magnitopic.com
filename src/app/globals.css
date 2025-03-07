@@ -1,1 +1,14 @@
 @import "tailwindcss";
+
+@font-face {
+	font-family: "Switzer-Regular";
+	src: url("../../public/fonts/Switzer-Medium.otf") format("opentype");
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}
+
+* {
+	font-family: "Switzer-Regular", sans-serif;
+	font-weight: 300;
+}
