@@ -1,12 +1,12 @@
 import "./globals.css";
-import Header from '../components/Header';
+import Header from "../components/Header";
 
 export const metadata = {
 	title: {
-		template: '%s | Magnitopic',
-		default: 'Magnitopic',
+		template: "%s | Magnitopic",
+		default: "Magnitopic",
 	},
-	description: 'Main home page of the magnitopic.com webpage',
+	description: "Main home page of the magnitopic.com webpage",
 };
 
 export default function RootLayout({ children }) {

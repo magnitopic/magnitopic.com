@@ -1,9 +1,18 @@
+"use client";
 import React from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const Header = () => {
+	const pathname = usePathname();
+	const isHome = pathname === "/";
+
 	return (
-		<header className="flex flex-1 justify-around items-center flex-col absolute top-0 bg-transparent backdrop-blur-3xl z-10 w-full">
+		<header
+			className={`flex flex-1 justify-around items-center flex-col ${
+				isHome ? "absolute" : "relative"
+			} top-0 bg-transparent backdrop-blur-3xl z-20 w-full`}
+		>
 			<section className="container max-w-7xl my-10 px-4 flex-grow flex gap-5 justify-around flex-wrap items-center flex-col md:flex-row">
 				<p className="text-blue-200 text-3xl">
 					<Link href="/">Magnitopic</Link>
@@ -28,9 +37,9 @@ const Header = () => {
 									Photography
 								</Link>
 							</li>
-							<li className="hover:underline decoration-blue-500 decoration-2">
+							{/* <li className="hover:underline decoration-blue-500 decoration-2">
 								<Link href="/blog">Blog</Link>
-							</li>
+							</li> */}
 						</div>
 					</ul>
 				</nav>

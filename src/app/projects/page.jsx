@@ -1,13 +1,11 @@
-
 export const metadata = {
-    title: "Projects"
-}
+	title: "Projects",
+};
 
 export default function Projects() {
-    return (
-        <main>
-            <div className="font-bold text-gray-600 text-2xl ">Projects</div>
-        </main>
-    );
+	return (
+		<main className="flex flex-1 justify-around items-center flex-col z-10">
+			<h1 className="text-3xl">Projects</h1>
+		</main>
+	);
 }
-

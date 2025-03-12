@@ -1,4 +1,4 @@
-import BgCanvas from "./BgCanvas";
+import BgCanvas from "../components/BgCanvas";
 import "font-awesome/css/font-awesome.min.css";
 import Link from "next/link";
 

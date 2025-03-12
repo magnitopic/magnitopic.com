@@ -1,7 +1,5 @@
 const ProjectDetail = ({ params }) => {
-    return (
-        <p>Project ID: {params.id}</p>
-    )
-}
+	return <p>Project ID: {params.id}</p>;
+};
 
 export default ProjectDetail;
