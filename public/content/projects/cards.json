@@ -2,7 +2,7 @@
 	{
 		"id": "minishell",
 		"title": "Minishell",
-		"description": "This project was about creating a simple shell. Yes, our own little bash. We learned a lot about signals, pipes, forks, file descriptors and handling user inputs. But most importantly, we learned how to structure a large C project.",
+		"description": "This project was about creating a simple shell. Yes, our own little bash. We learned a lot about signals, pipes, forks, file descriptors and handling user inputs. But most importantly, we learned how to structure a large C project. All while working as a team.",
 		"tags": ["C", "Bash", "Team Project", "42"],
 		"image": "/content/projects/img/minishell.png",
 		"github": "https://github.com/magnitopic/minishell"
@@ -10,8 +10,14 @@
 	{
 		"id": "rubber-ducky-dns",
 		"title": "Rubber Ducky DNS poisoning",
-		"description": "This project was about creating a simple shell. Yes, our own little bash. We learned a lot about signals, pipes, forks, file descriptors and handling user inputs. But most importantly, we learned how to structure a large C project.",
-		"tags": ["Cybersecurity", "DNS", "Python", "Rubber Ducky" ,"Team Project"],
+		"description": "The goal of this project was to do a class presentation on explaining what a rubber ducky is and what it can be used for. To show it's potential, we created a small project in which a rubber ducky would change the DNS settings of a computer. That made traffic go through our own fake page login and steal the credentials.",
+		"tags": [
+			"Cybersecurity",
+			"DNS",
+			"Python",
+			"Rubber Ducky",
+			"Team Project"
+		],
 		"image": "https://raw.githubusercontent.com/magnitopic/RubberDuckyPresentation/refs/heads/master/Pictures/rubberDucky.png",
 		"github": "https://github.com/magnitopic/RubberDuckyPresentation/tree/master"
 	}
