@@ -33,21 +33,21 @@ export default function Home() {
 								target="_blank"
 								rel="noopener noreferrer"
 							>
-								<i className="fa fa-linkedin" />
+								<i className="fa fa-linkedin hover:text-blue-300 hover:scale-110" />
 							</Link>
 							<Link
 								href="https://github.com/magnitopic"
 								target="_blank"
 								rel="noopener noreferrer"
 							>
-								<i className="fa fa-github" />
+								<i className="fa fa-github hover:text-blue-300 hover:scale-110" />
 							</Link>
 							<Link
 								href="https://www.youtube.com/@Magnitopic"
 								target="_blank"
 								rel="noopener noreferrer"
 							>
-								<i className="fa fa-youtube-play" />
+								<i className="fa fa-youtube-play hover:text-blue-300 hover:scale-110" />
 							</Link>
 						</div>
 						<div className="text-center md:text-start">

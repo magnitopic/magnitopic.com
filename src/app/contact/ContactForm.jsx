@@ -61,7 +61,7 @@ const ContactForm = () => {
 			{/* Name field */}
 			<div className="mb-4">
 				<label htmlFor="name" className="block text-white font-medium mb-2">
-					Name
+					Name *
 				</label>
 				<input
 					type="text"
@@ -77,7 +77,7 @@ const ContactForm = () => {
 			{/* Email field */}
 			<div className="mb-4">
 				<label htmlFor="email" className="block text-white font-medium mb-2">
-					Email
+					Email *
 				</label>
 				<input
 					type="email"
@@ -93,7 +93,7 @@ const ContactForm = () => {
 			{/* Message field */}
 			<div className="mb-4">
 				<label htmlFor="message" className="block text-white font-medium mb-2">
-					Message
+					Message *
 				</label>
 				<textarea
 					id="message"
