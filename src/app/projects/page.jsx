@@ -5,7 +5,7 @@ import projects from "../../../public/content/projects/cards.json";
 export default function Projects() {
 	return (
 		<>
-			<BgCanvas></BgCanvas>
+			<BgCanvas />
 			<main className="flex flex-1 justify-around items-center flex-col z-10 relative">
 				<section className="container max-w-7xl px-4 pt-32 pb-16">
 					<h1 className="text-5xl mb-8 text-center md:text-left">
