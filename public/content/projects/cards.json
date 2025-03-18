@@ -3,7 +3,12 @@
 		"id": "minishell",
 		"title": "Minishell",
 		"description": "This project was about creating a simple shell. Yes, our own little bash. We learned a lot about signals, pipes, forks, file descriptors and handling user inputs. But most importantly, we learned how to structure a large C project. All while working as a team.",
-		"tags": ["C", "Bash", "Team Project", "42"],
+		"tags": [
+			"C",
+			"Bash",
+			"Team Project",
+			"42"
+		],
 		"image": "/content/projects/img/minishell.png",
 		"github": "https://github.com/magnitopic/minishell"
 	},
@@ -18,7 +23,23 @@
 			"Rubber Ducky",
 			"Team Project"
 		],
-		"image": "https://raw.githubusercontent.com/magnitopic/RubberDuckyPresentation/refs/heads/master/Pictures/rubberDucky.png",
-		"github": "https://github.com/magnitopic/RubberDuckyPresentation/tree/master"
+		"image": "/content/projects/img/rubberDucky.png",
+		"github": "https://github.com/magnitopic/RubberDuckyPresentation"
+	},
+	{
+		"id": "matcha",
+		"title": "Matcha web page",
+		"description": "Fullstack dating website. Made with React, TypeScript & Tailwind. Group project in which I worked on the frontend and coordinated with a team mate to make the backend API service.",
+		"tags": [
+			"WebDev",
+			"Frontend",
+			"ReactJS",
+			"Tailwind",
+			"TypeScript",
+			"Team Project",
+			"42"
+		],
+		"image": "/content/projects/img/matcha.png",
+		"github": "https://github.com/magnitopic/matcha"
 	}
 ]
