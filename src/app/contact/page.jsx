@@ -5,6 +5,7 @@ import BgCanvas from "../../components/BgCanvas";
 
 const page = () => {
 	const [status, setStatus] = useState(null)
+	const [error, setError] = useState(null)
 
 	const handleFormSubmit = async (event) => {
 		event.preventDefault();
@@ -23,10 +24,12 @@ const page = () => {
 			} else {
 				setStatus('error');
 				setError(`${res.status} ${res.statusText}`);
+				console.error(error);
 			}
 		} catch (e) {
 			setStatus('error');
 			setError(`${e}`);
+			console.error(error);
 		}
 	};
 
