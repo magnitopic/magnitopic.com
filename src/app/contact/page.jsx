@@ -1,7 +1,35 @@
-import React from "react";
+'use client';
+
+import { useState } from 'react';
 import BgCanvas from "../../components/BgCanvas";
 
 const page = () => {
+	const [status, setStatus] = useState(null)
+
+	const handleFormSubmit = async (event) => {
+		event.preventDefault();
+		try {
+			setStatus('pending');
+			setError(null);
+			const myForm = event.target;
+			const formData = new FormData(myForm);
+			const res = await fetch('/__contact.html', {
+				method: 'POST',
+				headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+				body: new URLSearchParams(formData).toString()
+			});
+			if (res.status === 200) {
+				setStatus('ok');
+			} else {
+				setStatus('error');
+				setError(`${res.status} ${res.statusText}`);
+			}
+		} catch (e) {
+			setStatus('error');
+			setError(`${e}`);
+		}
+	};
+
 	return (
 		<>
 			<BgCanvas />
@@ -10,7 +38,7 @@ const page = () => {
 					<div className="bg-blue-900 rounded-lg p-10">
 						<h2 className="text-lg font-semibold">Get in touch</h2>
 						<div className="p-10 max-w-3xl m-auto">
-							<form name="contact" method="POST" data-netlify="true">
+							<form name="contact" method="POST" data-netlify="true" onSubmit={handleFormSubmit}>
 
 								<input type="hidden" name="form-name" value="contact" />
 
