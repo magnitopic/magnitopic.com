@@ -1,12 +1,13 @@
 import BgCanvas from "../components/BgCanvas";
 import "font-awesome/css/font-awesome.min.css";
 import Link from "next/link";
+import { SocialsLinkButton } from "@/components/ui";
 
 export default function Home() {
 	return (
 		<>
 			<BgCanvas></BgCanvas>
-			<main className="flex flex-1 justify-around items-center flex-col z-10 relative">
+			<main className="flex flex-1 justify-around items-center flex-col z-10 relative bg-surface-primary text-content-primary">
 				<section className="container max-w-7xl px-4 flex-grow flex gap-5 justify-around flex-wrap min-h-screen items-center">
 					<div className="flex flex-col md:gap-5 gap-10 items-center md:items-start">
 						<div>
@@ -28,27 +29,18 @@ export default function Home() {
 							</h2>
 						</div>
 						<div className="flex flex-row gap-5 text-3xl w-fit">
-							<Link
-								href="https://www.linkedin.com/in/magnitopic/"
-								target="_blank"
-								rel="noopener noreferrer"
-							>
-								<i className="fa fa-linkedin hover:text-blue-300 hover:scale-110" />
-							</Link>
-							<Link
-								href="https://github.com/magnitopic"
-								target="_blank"
-								rel="noopener noreferrer"
-							>
-								<i className="fa fa-github hover:text-blue-300 hover:scale-110" />
-							</Link>
-							<Link
-								href="https://www.youtube.com/@Magnitopic"
-								target="_blank"
-								rel="noopener noreferrer"
-							>
-								<i className="fa fa-youtube-play hover:text-blue-300 hover:scale-110" />
-							</Link>
+							<SocialsLinkButton
+								link="https://twitter.com/magnitopic"
+								icon="fa fa-twitter"
+							/>
+							<SocialsLinkButton
+								link="https://www.linkedin.com/in/magnitopic/"
+								icon="fa fa-linkedin"
+							/>
+							<SocialsLinkButton
+								link="https://github.com/magnitopic"
+								icon="fa fa-github"
+							/>
 						</div>
 						<div className="text-center md:text-start">
 							<p>
