@@ -1,12 +1,12 @@
 import "font-awesome/css/font-awesome.min.css";
 import Link from "next/link";
-import { SocialsLinkButton } from "../components/ui";
+import { SocialsLinkButton, HeroBanner } from "../components/ui";
 
 export default function Home() {
 	return (
 		<>
-			<main className="min-h-screen relative overflow-hidden items-center">
-				<section className="w-full px-4 flex-grow flex gap-5 flex-wrap min-h-screen items-center justify-center bg-image-[url('https://burakdogan.vercel.app/img/gradients/1.png')] bg-cover">
+			<main className="min-h-screen relative overflow-hidden">
+				<HeroBanner>
 					<div className="flex flex-col md:gap-5 gap-10 items-center">
 						<div>
 							<h1 className="md:text-5xl text-4xl max-w-xl text-center mb-3">
@@ -52,8 +52,8 @@ export default function Home() {
 							</p>
 						</div>
 					</div>
-				</section>
-				{/* <section className="w-full px-4 flex-grow flex gap-5 flex-wrap min-h-screen items-center justify-center bg-gradient-to-t from-0% to-slate-900">
+				</HeroBanner>
+				{/* <section className="w-full px-4 flex-grow flex gap-5 flex-wrap min-h-screen items-center justify-center ">
 					<h1 className="text-5xl">Skills</h1>
 				</section> */}
 				{/* <section className="container max-w-7xl my-10 px-4 flex-grow flex gap-5 flex-wrap">
