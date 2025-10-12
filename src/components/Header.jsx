@@ -22,7 +22,7 @@ const Header = () => {
 	return (
 		<header
 			className={`flex justify-around items-center flex-col ${
-				isHome && !isScrolled ? "h-24 py-4" : "h-16 py-2"
+				isHome && !isScrolled ? "min-h-24 py-4" : "min-h-16 py-2"
 			} fixed top-0 left-0 right-0 transition-all duration-300 ease-in-out bg-transparent backdrop-blur-3xl z-50 w-full`}
 		>
 			<section className="container max-w-7xl px-4 flex-grow flex gap-5 justify-around flex-wrap items-center flex-col md:flex-row">
