@@ -12,9 +12,15 @@ export const metadata = {
 export default function RootLayout({ children }) {
 	return (
 		<html lang="en">
-			<body className="bg-[#0C071E] text-white">
+			<body className="bg-[#0C071E] text-white" suppressHydrationWarning>
+				{/* Skip link — visible on keyboard focus, hidden otherwise */}
+				<a href="#main-content" className="skip-link">
+					Skip to main content
+				</a>
 				<Header />
-				{children}
+				<div id="main-content" tabIndex={-1}>
+					{children}
+				</div>
 			</body>
 		</html>
 	);

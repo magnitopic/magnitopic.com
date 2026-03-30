@@ -1,61 +1,63 @@
-import React from "react";
 import "font-awesome/css/font-awesome.min.css";
 import Link from "next/link";
 
 const ProjectCard = ({ project }) => {
 	return (
-		<div
-			key={project.id}
-			className="bg-opacity-20 backdrop-blur-md bg-blue-900 rounded-lg overflow-hidden transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/20 border border-blue-500/20"
+		<article
+			aria-labelledby={`project-${project.id}-title`}
+			className="group p-6 rounded-xl border border-white/[0.07] bg-white/[0.02] hover:border-blue-500/30 hover:bg-blue-950/15 transition-all duration-300 flex flex-col"
 		>
-			<div className="relative h-fit max-h-48 overflow-hidden flex justify-center items-center">
-				<img
-					src={project.image}
-					alt={project.title}
-					className="object-contain"
-				/>
+			{project.image && (
+				<div className="relative h-36 overflow-hidden rounded-lg mb-5 bg-white/[0.03] border border-white/[0.05] flex items-center justify-center">
+					<img
+						src={project.image}
+						alt={`${project.title} preview`}
+						className="w-full h-full object-contain p-3 opacity-75 group-hover:opacity-100 transition-opacity duration-300"
+					/>
+				</div>
+			)}
+
+			{/* Tags — decorative, skip for assistive tech */}
+			<div className="flex flex-wrap gap-1.5 mb-3" aria-hidden="true">
+				{project.tags.slice(0, 4).map((tag) => (
+					<span key={tag} className="text-[10px] text-blue-400/60 font-mono">
+						#{tag}
+					</span>
+				))}
 			</div>
 
-			<div className="p-6">
-				<div className="flex flex-col mb-6">
-					<Link href={`/projects/${project.id}`} className="block">
-						<h2 className="text-2xl mb-3 text-blue-200 hover:underline decoration-blue-500 decoration-2">
-							{project.title}
-						</h2>
-					</Link>
-					<p className="mb-4 text-gray-300">{project.description}</p>
-					<div className="flex flex-wrap gap-2">
-						{project.tags.map((tag, index) => (
-							<span
-								key={index}
-								className="text-xs px-3 py-1 rounded-full bg-blue-900/50 text-blue-200 border border-blue-500/30"
-							>
-								{tag}
-							</span>
-						))}
-					</div>
-				</div>
+			<h2
+				id={`project-${project.id}-title`}
+				className="text-base font-medium text-white/90 mb-2 group-hover:text-white transition-colors"
+			>
+				{project.title}
+			</h2>
 
-				<div className="flex justify-between items-center flex-col gap-3">
-					<Link
-						href={`/projects/${project.id}`}
-						className="px-4 py-2 rounded bg-blue-500/20 text-blue-200 hover:bg-blue-500/40 transition-colors border border-blue-500/30 w-full text-center"
-					>
-						More about this project
-						<i className="fa fa-arrow-right ml-2" />
-					</Link>
-					<Link
-						href={project.github}
-						target="_blank"
-						rel="noopener noreferrer"
-						className="px-4 py-2 rounded bg-blue-500/20 text-blue-200 hover:bg-blue-500/40 transition-colors border border-blue-500/30 w-full text-center"
-					>
-						<i className="fa fa-github mr-2" />
-						See project code on GitHub
-					</Link>
-				</div>
+			<p className="text-sm text-white/60 leading-relaxed flex-1 line-clamp-3 mb-5">
+				{project.description}
+			</p>
+
+			<div className="pt-4 border-t border-white/[0.06] flex items-center justify-between">
+				<a
+					href={project.github}
+					target="_blank"
+					rel="noopener noreferrer"
+					aria-label={`${project.title} source code on GitHub (opens in new tab)`}
+					className="text-xs font-mono text-blue-400/70 hover:text-blue-300 transition-colors inline-flex items-center gap-1.5"
+				>
+					<i className="fa fa-github text-sm" aria-hidden="true" />
+					GitHub
+				</a>
+				<Link
+					href={`/projects/${project.id}`}
+					aria-label={`View details for ${project.title}`}
+					className="text-xs font-mono text-white/55 hover:text-white/85 transition-colors"
+				>
+					Details
+					<span aria-hidden="true"> →</span>
+				</Link>
 			</div>
-		</div>
+		</article>
 	);
 };
 

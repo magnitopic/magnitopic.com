@@ -1,25 +1,34 @@
 import ProjectCard from "../../components/ProjectCard";
 import projects from "../../../public/content/projects/cards.json";
 
+export const metadata = {
+	title: "Projects",
+};
+
 export default function Projects() {
 	return (
-		<main className="flex flex-1 justify-around items-center flex-col z-10 relative">
-			<section className="container max-w-7xl px-4 pt-32 pb-16">
-				<h1 className="text-5xl mb-8 text-center md:text-left">
-					<span className="text-blue-300">Projects</span>
-				</h1>
-				<p className="text-xl mb-12 max-w-3xl text-center md:text-left">
-					Here are some of the projects I've worked on. Click on a
-					project to learn more about it. You can also view the
-					project code on GitHub.
+		<main className="max-w-5xl mx-auto px-6 pt-32 pb-24 min-h-screen">
+			{/* Page header */}
+			<header className="mb-14">
+				<p className="text-xs text-blue-400/70 font-mono tracking-[0.25em] uppercase mb-4" aria-hidden="true">
+					My work
 				</p>
+				<h1 className="text-5xl md:text-6xl font-bold mb-5 bg-gradient-to-br from-white to-blue-200 bg-clip-text text-transparent">
+					Projects
+				</h1>
+				<p className="text-white/60 max-w-lg leading-relaxed">
+					Some of the projects I've worked on, and are most proud of.
+				</p>
+			</header>
 
-				<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-					{projects.map((project) => (
-						<ProjectCard key={project.id} project={project} />
-					))}
-				</div>
-			</section>
+			{/* Semantic list so screen readers announce "X items" */}
+			<ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 list-none">
+				{projects.map((project) => (
+					<li key={project.id}>
+						<ProjectCard project={project} />
+					</li>
+				))}
+			</ul>
 		</main>
 	);
 }
