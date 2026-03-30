@@ -34,7 +34,7 @@ const experience = [
 		period: "Feb 2024 – Jun 2024",
 		current: false,
 		description:
-			"Internship — development of internal tools and web pages using Python, JavaScript and Java.",
+			"Development of internal tools and web pages using Python, JavaScript and Java. Worked on a web-based BIM model viewer and a project management dashboard.",
 		tags: ["Python", "JavaScript", "Java"],
 		internship: true,
 	},
