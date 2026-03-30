@@ -2,20 +2,55 @@
 	{
 		"id": "minishell",
 		"title": "Minishell",
-		"description": "This project was about creating a simple shell. Yes, our own little bash. We learned a lot about signals, pipes, forks, file descriptors and handling user inputs. But most importantly, we learned how to structure a large C project. All while working as a team.",
-		"tags": [
-			"C",
-			"Bash",
-			"Team Project",
-			"42"
-		],
+		"description": "A UNIX shell built from scratch in C that replicates core Bash behaviour: command parsing, pipes, redirections, environment variables, built-in commands (cd, echo, export, unset, exit…), signal handling, and heredocs. The main challenge was understanding how the kernel actually runs processes — forks, exec, file descriptors — rather than just calling a library to do it for you.",
+		"tags": ["C", "UNIX", "Shell", "Processes", "Team Project", "42"],
 		"image": "/content/projects/img/minishell.png",
 		"github": "https://github.com/magnitopic/minishell"
 	},
 	{
+		"id": "push-swap",
+		"title": "Push Swap",
+		"description": "Sort a stack of integers using only two stacks and eleven operations (push, rotate, reverse-rotate, swap) in as few moves as possible. Small inputs (≤5) use a hardcoded optimal sort; larger inputs use a greedy algorithm that calculates the cost to insert every element and always picks the cheapest move, with a synergy optimisation that merges simultaneous same-direction rotations on both stacks into a single combined instruction. Typically achieves ~750 moves for 100 numbers and ~6 500 for 500.",
+		"tags": ["C", "Algorithms", "Sorting", "Data Structures", "42"],
+		"image": "/content/projects/img/push_swap.gif",
+		"github": "https://github.com/magnitopic/push_swap"
+	},
+	{
+		"id": "webserv",
+		"title": "WebServ",
+		"description": "A fully compliant HTTP/1.1 web server written from scratch in C++. Handles GET, POST and DELETE requests, serves static files with auto-indexing, executes CGI scripts (Python), and supports multiple virtual servers from a single nginx-style config file. I/O multiplexing is done with poll() so a single process manages all connections without threads. Stress-tested with siege.",
+		"tags": [
+			"C++",
+			"Networking",
+			"HTTP",
+			"CGI",
+			"POSIX",
+			"Team Project",
+			"42"
+		],
+		"image": "/content/projects/img/webserv.png",
+		"github": "https://github.com/magnitopic/webserv"
+	},
+	{
+		"id": "gomoku",
+		"title": "Gomoku AI",
+		"description": "A complete Gomoku (Five in a Row) game engine with a strong AI opponent built on minimax with alpha-beta pruning. The first move is searched to depth 10; subsequent moves to depth 3, reducing the search space from ~590 billion nodes to ~24 million. A pattern-based heuristic scores positions (five-in-a-row = 1M pts, open four = 100k, etc.) and a threat-detection pre-pass handles immediate captures and blocks before the full tree search. Supports standard rules, 42-school rules (double-three prohibition + captures) and a Reversi variant.",
+		"tags": [
+			"C++",
+			"Game AI",
+			"Minimax",
+			"Alpha-Beta Pruning",
+			"MLX42",
+			"Team Project",
+			"42"
+		],
+		"image": "/content/projects/img/gomoku.png",
+		"github": "https://github.com/magnitopic/gomoku"
+	},
+	{
 		"id": "rubber-ducky-dns",
-		"title": "Rubber Ducky DNS poisoning",
-		"description": "The goal of this project was to do a class presentation on explaining what a rubber ducky is and what it can be used for. To show it's potential, we created a small project in which a rubber ducky would change the DNS settings of a computer. That made traffic go through our own fake page login and steal the credentials.",
+		"title": "Rubber Ducky — DNS Poisoning Demo",
+		"description": "A class presentation project demonstrating how a USB Rubber Ducky can be weaponised for credential theft. The payload silently reconfigures a machine's DNS settings so all traffic is routed through a fake login page we controlled. Built to show the attack surface of physical-access threats, not for malicious use.",
 		"tags": [
 			"Cybersecurity",
 			"DNS",
@@ -27,19 +62,51 @@
 		"github": "https://github.com/magnitopic/RubberDuckyPresentation"
 	},
 	{
-		"id": "matcha",
-		"title": "Matcha web page",
-		"description": "Fullstack dating website. Made with React, TypeScript & Tailwind. Group project in which I worked on the frontend and coordinated with a team mate to make the backend API service.",
+		"id": "cub3d",
+		"title": "Cub3D",
+		"description": "A first-person 3D maze explorer inspired by Wolfenstein 3D, built in C using only the 42 MinilibX graphics library. Walls are rendered with a raycasting engine using the DDA (Digital Differential Analyzer) algorithm: one ray per screen column, perpendicular-distance correction to eliminate fisheye distortion, and per-wall texture mapping based on cardinal orientation. Maps are loaded from custom .cub config files that define textures and floor/ceiling colours.",
 		"tags": [
-			"WebDev",
-			"Frontend",
-			"ReactJS",
-			"Tailwind",
+			"C",
+			"Raycasting",
+			"DDA",
+			"Graphics",
+			"MinilibX",
+			"Team Project",
+			"42"
+		],
+		"image": "/content/projects/img/cub3d.gif",
+		"github": "https://github.com/magnitopic/cub3D"
+	},
+	{
+		"id": "matcha",
+		"title": "Matcha",
+		"description": "Full-stack dating web app built with React, TypeScript and Tailwind on the frontend and a custom REST API on the backend. I led the frontend and coordinated with a teammate on the API design. Features include profile matching by interests and location, real-time chat, notifications, and profile browsing with filters.",
+		"tags": [
+			"React",
 			"TypeScript",
+			"Tailwind",
+			"REST API",
+			"Full-Stack",
 			"Team Project",
 			"42"
 		],
 		"image": "/content/projects/img/matcha.png",
 		"github": "https://github.com/magnitopic/matcha"
+	},
+	{
+		"id": "swifty-proteins",
+		"title": "Swifty Proteins",
+		"description": "Cross-platform mobile app for interactive 3D visualisation of protein ligand structures from the RCSB Protein Data Bank. Users authenticate, search ligands by ID, and explore molecular geometry in real time across three render modes: space-filling, ball-and-stick, and ribbon. The backend fetches mmCIF files from RCSB, converts them to PDB format, and streams atom/bond data to the React Three Fiber renderer. Includes JWT authentication with refresh-token rotation and biometric login (Face ID / Touch ID).",
+		"tags": [
+			"React Native",
+			"TypeScript",
+			"React Three Fiber",
+			"Node.js",
+			"PostgreSQL",
+			"Docker",
+			"42"
+		],
+		"image": "/content/projects/img/swifty-proteins.png",
+		"github": "https://github.com/magnitopic/swifty-proteins"
 	}
 ]

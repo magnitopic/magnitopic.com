@@ -246,7 +246,7 @@ export default function Home() {
 				</div>
 
 				<ul className="grid grid-cols-1 md:grid-cols-3 gap-4 list-none">
-					{projects.map((project, i) => (
+					{projects.slice(0, 5).map((project, i) => (
 						<li
 							key={project.id}
 							className={`group relative p-6 rounded-xl border border-white/[0.07] bg-white/[0.02] hover:border-blue-500/30 hover:bg-blue-950/15 transition-all duration-300 flex flex-col ${i === 0 ? "md:col-span-2" : ""}`}
