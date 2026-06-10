@@ -2,7 +2,7 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 
-const POSTS_DIR = path.join(process.cwd(), "src/content/blog");
+const POSTS_DIR = path.join(process.cwd(), "public/content/blog");
 
 /**
  * Returns all published posts (draft: false), sorted newest first.

@@ -30,8 +30,7 @@ export default function Blog() {
 					Blog
 				</h1>
 				<p className="text-white/60 max-w-lg leading-relaxed">
-					Thoughts on data engineering, AI, and things I&apos;ve been building
-					or learning.
+					This is where I share my thoughts, ideas and projects I've been working on.
 				</p>
 			</header>
 
