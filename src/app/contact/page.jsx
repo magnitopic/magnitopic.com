@@ -62,19 +62,6 @@ export default function Contact() {
 
 				{/* Right column */}
 				<div className="space-y-4">
-					{/* Email */}
-					<section aria-labelledby="email-heading" className="rounded-xl border border-white/[0.07] bg-white/[0.02] p-7">
-						<h2 id="email-heading" className="text-xs font-mono text-white/40 uppercase tracking-widest mb-4">
-							Email
-						</h2>
-						<a
-							href="mailto:magnitopic@gmail.com"
-							className="text-blue-400/80 hover:text-blue-300 transition-colors font-mono text-sm"
-						>
-							magnitopic@gmail.com
-						</a>
-					</section>
-
 					{/* Social links */}
 					<section aria-labelledby="socials-heading" className="rounded-xl border border-white/[0.07] bg-white/[0.02] p-7">
 						<h2 id="socials-heading" className="text-xs font-mono text-white/40 uppercase tracking-widest mb-6">

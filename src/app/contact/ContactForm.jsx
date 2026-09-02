@@ -9,29 +9,76 @@ const labelClass =
 const ContactForm = () => {
 	const [status, setStatus] = useState(null);
 	const [error, setError] = useState(null);
+	const [formErrors, setFormErrors] = useState({
+		name: "",
+		email: "",
+		message: "",
+	});
 	const [formValues, setFormValues] = useState({
 		name: "",
 		email: "",
 		message: "",
 	});
 
+	const validateForm = (values) => {
+		const nextErrors = {
+			name: "",
+			email: "",
+			message: "",
+		};
+		const name = values.name.trim();
+		const email = values.email.trim();
+		const message = values.message.trim();
+
+		if (!name) {
+			nextErrors.name = "Please enter your name.";
+		}
+
+		if (!email) {
+			nextErrors.email = "Please enter your email.";
+		} else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+			nextErrors.email = "Please enter a valid email address.";
+		}
+
+		if (!message) {
+			nextErrors.message = "Please enter a message.";
+		}
+
+		return nextErrors;
+	};
+
 	const handleInputChange = (e) => {
 		const { name, value } = e.target;
 		setFormValues((prev) => ({ ...prev, [name]: value }));
+		setFormErrors((prev) => ({ ...prev, [name]: "" }));
 	};
 
-	const resetForm = () =>
+	const resetForm = () => {
 		setFormValues({ name: "", email: "", message: "" });
+		setFormErrors({ name: "", email: "", message: "" });
+	};
 
 	const handleFormSubmit = async (e) => {
 		e.preventDefault();
+		const nextErrors = validateForm(formValues);
+		setFormErrors(nextErrors);
+
+		const hasErrors = Object.values(nextErrors).some(Boolean);
+		if (hasErrors) {
+			setStatus("error");
+			setError("Please fix the highlighted fields and try again.");
+			return;
+		}
+
 		try {
 			setStatus("pending");
 			setError(null);
 			const formData = new FormData(e.target);
 			const res = await fetch("/__contact.html", {
 				method: "POST",
-				headers: { "Content-Type": "application/x-www-form-urlencoded" },
+				headers: {
+					"Content-Type": "application/x-www-form-urlencoded",
+				},
 				body: new URLSearchParams(formData).toString(),
 			});
 			if (res.status === 200) {
@@ -70,11 +117,15 @@ const ContactForm = () => {
 					name="name"
 					value={formValues.name}
 					onChange={handleInputChange}
-					className={inputClass}
+					className={`${inputClass} ${formErrors.name ? "border-red-500/60" : ""}`}
 					placeholder="Your name"
 					required
 					autoComplete="name"
+					aria-invalid={Boolean(formErrors.name)}
 				/>
+				{formErrors.name && (
+					<p className="mt-2 text-xs font-mono text-red-400/80">{formErrors.name}</p>
+				)}
 			</div>
 
 			<div>
@@ -88,11 +139,15 @@ const ContactForm = () => {
 					name="email"
 					value={formValues.email}
 					onChange={handleInputChange}
-					className={inputClass}
+					className={`${inputClass} ${formErrors.email ? "border-red-500/60" : ""}`}
 					placeholder="you@example.com"
 					required
 					autoComplete="email"
+					aria-invalid={Boolean(formErrors.email)}
 				/>
+				{formErrors.email && (
+					<p className="mt-2 text-xs font-mono text-red-400/80">{formErrors.email}</p>
+				)}
 			</div>
 
 			<div>
@@ -106,10 +161,14 @@ const ContactForm = () => {
 					rows="5"
 					value={formValues.message}
 					onChange={handleInputChange}
-					className={inputClass}
+					className={`${inputClass} ${formErrors.message ? "border-red-500/60" : ""}`}
 					placeholder="What's on your mind?"
 					required
+					aria-invalid={Boolean(formErrors.message)}
 				/>
+				{formErrors.message && (
+					<p className="mt-2 text-xs font-mono text-red-400/80">{formErrors.message}</p>
+				)}
 			</div>
 
 			<button
