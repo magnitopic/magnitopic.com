@@ -1,4 +1,5 @@
 import ProjectCard from "../../components/ProjectCard";
+import { Container } from "../../components/ui";
 import projects from "../../../public/content/projects/cards.json";
 
 export const metadata = {
@@ -7,28 +8,32 @@ export const metadata = {
 
 export default function Projects() {
 	return (
-		<main className="max-w-5xl mx-auto px-6 pt-32 pb-24 min-h-screen">
-			{/* Page header */}
-			<header className="mb-14">
-				<p className="text-xs text-blue-400/70 font-mono tracking-[0.25em] uppercase mb-4" aria-hidden="true">
-					My work
+		<main>
+			<Container
+				as="header"
+				className="grid grid-cols-1 gap-x-6 gap-y-6 pb-16 pt-12 md:grid-cols-12 md:pb-24 md:pt-20"
+			>
+				<h1 className="display font-medium md:col-span-9">Projects</h1>
+				<p className="max-w-xs text-lg leading-snug text-graphite md:col-span-3 md:self-end">
+					Some of the projects I&apos;ve worked on, and am most proud
+					of.
 				</p>
-				<h1 className="text-5xl md:text-6xl font-bold mb-5 bg-gradient-to-br from-white to-blue-200 bg-clip-text text-transparent">
-					Projects
-				</h1>
-				<p className="text-white/60 max-w-lg leading-relaxed">
-					Some of the projects I've worked on, and are most proud of.
-				</p>
-			</header>
+			</Container>
 
-			{/* Semantic list so screen readers announce "X items" */}
-			<ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 list-none">
-				{projects.map((project) => (
-					<li key={project.id}>
-						<ProjectCard project={project} />
-					</li>
-				))}
-			</ul>
+			<div className="border-t border-rule">
+				<Container>
+					<ol
+						aria-label="Projects"
+						className="grid list-none grid-cols-1 gap-x-6 gap-y-14 py-12 sm:grid-cols-2 lg:grid-cols-3 md:py-20"
+					>
+						{projects.map((project, i) => (
+							<li key={project.id}>
+								<ProjectCard project={project} index={i} />
+							</li>
+						))}
+					</ol>
+				</Container>
+			</div>
 		</main>
 	);
 }

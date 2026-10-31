@@ -1,2 +1,2 @@
-export { default as SocialsLinkButton } from './SocialsLinkButton';
-export { default as HeroBanner } from './HeroBanner';
+export { default as DotGrid } from "./DotGrid";
+export { default as Section, Container } from "./Section";

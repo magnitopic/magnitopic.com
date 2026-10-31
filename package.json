@@ -9,7 +9,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "font-awesome": "^4.7.0",
     "gray-matter": "^4.0.3",
     "highlight.js": "^11.11.1",
     "next": "15.5.14",

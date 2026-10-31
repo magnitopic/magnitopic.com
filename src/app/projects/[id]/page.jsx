@@ -1,6 +1,6 @@
-import "font-awesome/css/font-awesome.min.css";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { Container } from "../../../components/ui";
 import projects from "../../../../public/content/projects/cards.json";
 
 export async function generateStaticParams() {
@@ -15,79 +15,73 @@ export async function generateMetadata({ params }) {
 
 export default async function ProjectDetail({ params }) {
 	const { id } = await params;
-	const project = projects.find((p) => p.id === id);
-	if (!project) notFound();
+	const index = projects.findIndex((p) => p.id === id);
+	if (index < 0) notFound();
+	const project = projects[index];
 
 	return (
-		<main className="max-w-5xl mx-auto px-6 pt-32 pb-24 min-h-screen">
-			{/* Back navigation */}
-			<Link
-				href="/projects"
-				aria-label="Back to all projects"
-				className="inline-flex items-center gap-2 text-xs font-mono text-white/55 hover:text-blue-300 transition-colors mb-14"
+		<main>
+			<Container className="pt-8">
+				<Link href="/projects" className="link text-sm">
+					<span aria-hidden="true">← </span>Projects
+				</Link>
+			</Container>
+
+			<Container
+				as="article"
+				className="grid grid-cols-1 gap-x-6 gap-y-10 pb-12 pt-12 md:grid-cols-12 md:pt-20"
 			>
-				<span aria-hidden="true">←</span>
-				Back to projects
-			</Link>
+				<div className="md:col-span-3 md:flex md:flex-col md:justify-between">
+					<p className="num text-graphite">
+						{String(index + 1).padStart(2, "0")} /{" "}
+						{String(projects.length).padStart(2, "0")}
+					</p>
+				</div>
+				<h1 className="display md:col-span-9 font-medium break-words">
+					{project.title}
+				</h1>
 
-			<div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
-				{/* Main content */}
-				<div className="lg:col-span-2">
-					{/* Tags */}
-					<ul
-						aria-label="Project technologies"
-						className="flex flex-wrap gap-2 mb-6 list-none"
-					>
-						{project.tags.map((tag) => (
-							<li
-								key={tag}
-								className="text-xs px-3 py-1 rounded-md border border-white/[0.08] bg-white/[0.03] text-white/70 font-mono"
-							>
-								{tag}
-							</li>
-						))}
-					</ul>
+				<aside
+					aria-label="Project details"
+					className="space-y-8 text-sm md:col-span-3"
+				>
+					<div>
+						<h2 className="text-graphite">Stack</h2>
+						<ul className="mt-1 list-none" aria-label="Project technologies">
+							{project.tags.map((tag) => (
+								<li key={tag}>{tag}</li>
+							))}
+						</ul>
+					</div>
+					<div>
+						<h2 className="text-graphite">Source</h2>
+						<a
+							href={project.github}
+							target="_blank"
+							rel="noopener noreferrer"
+							className="link mt-1 inline-block"
+							aria-label={`${project.title} source code on GitHub (opens in new tab)`}
+						>
+							GitHub<span aria-hidden="true"> ↗</span>
+						</a>
+					</div>
+				</aside>
 
-					<h1 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-br from-white to-blue-200 bg-clip-text text-transparent">
-						{project.title}
-					</h1>
-
-					<p className="text-white/65 leading-relaxed text-lg">
+				<div className="space-y-10 md:col-span-9">
+					{project.image && (
+						<div className="border border-rule bg-paper-2 p-4 md:p-8">
+							<img
+								src={project.image}
+								alt={`${project.title} preview`}
+								className="mx-auto h-auto max-h-[32rem] w-auto max-w-full"
+							/>
+						</div>
+					)}
+					<p className="max-w-[40rem] text-xl leading-snug">
 						{project.description}
 					</p>
 				</div>
-
-				{/* Sidebar */}
-				<aside aria-label="Project links and preview">
-					<div className="space-y-4">
-						{project.image && (
-							<div className="rounded-xl border border-white/[0.07] bg-white/[0.02] overflow-hidden p-4">
-								<img
-									src={project.image}
-									alt={`${project.title} preview screenshot`}
-									className="w-full h-auto object-contain"
-								/>
-							</div>
-						)}
-
-						<div className="rounded-xl border border-white/[0.07] bg-white/[0.02] p-5 space-y-4">
-							<p className="text-xs font-mono text-white/35 uppercase tracking-widest">
-								Links
-							</p>
-							<a
-								href={project.github}
-								target="_blank"
-								rel="noopener noreferrer"
-								aria-label={`${project.title} source code on GitHub (opens in new tab)`}
-								className="flex items-center gap-2.5 text-sm text-blue-400/80 hover:text-blue-300 transition-colors font-mono"
-							>
-								<i className="fa fa-github text-base" aria-hidden="true" />
-								View on GitHub
-							</a>
-						</div>
-					</div>
-				</aside>
-			</div>
+			</Container>
 		</main>
 	);
 }

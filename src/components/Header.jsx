@@ -2,6 +2,7 @@
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { Container, DotGrid } from "./ui";
 
 const navLinks = [
 	{ href: "/projects", label: "Projects" },
@@ -16,15 +17,8 @@ const navLinks = [
 
 const Header = () => {
 	const pathname = usePathname();
-	const [isScrolled, setIsScrolled] = useState(false);
 	const [menuOpen, setMenuOpen] = useState(false);
 	const headerRef = useRef(null);
-
-	useEffect(() => {
-		const handleScroll = () => setIsScrolled(window.scrollY > 40);
-		window.addEventListener("scroll", handleScroll);
-		return () => window.removeEventListener("scroll", handleScroll);
-	}, []);
 
 	// Close mobile menu on route change
 	useEffect(() => {
@@ -43,100 +37,81 @@ const Header = () => {
 		return () => document.removeEventListener("mousedown", handleClickOutside);
 	}, [menuOpen]);
 
-	return (
-		<header
-			ref={headerRef}
-			className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-				isScrolled
-					? "bg-[#0C071E]/85 backdrop-blur-xl border-b border-white/[0.05]"
-					: "bg-transparent"
+	const isActive = (href) =>
+		!href.startsWith("http") &&
+		(pathname === href || pathname.startsWith(`${href}/`));
+
+	const renderLink = ({ href, label, external }) => (
+		<Link
+			href={href}
+			target={external ? "_blank" : undefined}
+			rel={external ? "noopener noreferrer" : undefined}
+			aria-current={isActive(href) ? "page" : undefined}
+			className={`text-sm transition-colors hover:text-plum ${
+				isActive(href)
+					? "text-plum underline underline-offset-[0.4em] decoration-1"
+					: "text-ink"
 			}`}
 		>
-			<div className="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
-				{/* Logo */}
+			{label}
+			{external && (
+				<>
+					<span aria-hidden="true"> ↗</span>
+					<span className="sr-only"> (opens in new tab)</span>
+				</>
+			)}
+		</Link>
+	);
+
+	return (
+		<header ref={headerRef} className="border-b border-rule">
+			<a href="#main-content" className="skip-link">
+				Skip to content
+			</a>
+			<Container className="grid h-16 grid-cols-12 items-center gap-x-6">
 				<Link
 					href="/"
 					aria-label="Magnitopic — home"
-					className="font-mono text-sm text-blue-300/80 hover:text-blue-200 transition-colors"
+					className="col-span-8 flex items-center gap-3 md:col-span-3"
 				>
-					magnitopic<span className="text-blue-500/70" aria-hidden="true">.com</span>
+					<DotGrid size={24} filled={[0, 4, 8]} />
+					<span className="text-sm">Alejandro Aparicio</span>
 				</Link>
 
-				{/* Desktop nav */}
-				<nav aria-label="Main navigation" className="hidden md:block">
-					<ul className="flex items-center gap-7" role="list">
-						{navLinks.map(({ href, label, external }) => (
-							<li key={href}>
-								<Link
-									href={href}
-									target={external ? "_blank" : undefined}
-									rel={external ? "noopener noreferrer" : undefined}
-									aria-current={pathname === href ? "page" : undefined}
-									className={`text-sm transition-colors ${
-										pathname === href
-											? "text-white"
-											: "text-white/55 hover:text-white/90"
-									}`}
-								>
-									{label}
-									{external && (
-										<span className="sr-only"> (opens in new tab)</span>
-									)}
-								</Link>
-							</li>
+				<nav
+					aria-label="Main navigation"
+					className="col-span-9 hidden md:block"
+				>
+					<ul className="flex items-center gap-8" role="list">
+						{navLinks.map((l) => (
+							<li key={l.href}>{renderLink(l)}</li>
 						))}
 					</ul>
 				</nav>
 
-				{/* Mobile menu toggle */}
 				<button
-					className="md:hidden text-white/55 hover:text-white transition-colors p-1"
+					className="col-span-4 justify-self-end text-sm md:hidden"
 					onClick={() => setMenuOpen((v) => !v)}
-					aria-label={menuOpen ? "Close navigation menu" : "Open navigation menu"}
 					aria-expanded={menuOpen}
 					aria-controls="mobile-nav"
 				>
-					<div className="w-5 flex flex-col gap-1.5" aria-hidden="true">
-						<span
-							className={`block h-px bg-current transition-all ${menuOpen ? "rotate-45 translate-y-2" : ""}`}
-						/>
-						<span
-							className={`block h-px bg-current transition-all ${menuOpen ? "opacity-0" : ""}`}
-						/>
-						<span
-							className={`block h-px bg-current transition-all ${menuOpen ? "-rotate-45 -translate-y-2" : ""}`}
-						/>
-					</div>
+					{menuOpen ? "Close" : "Menu"}
 				</button>
-			</div>
+			</Container>
 
-			{/* Mobile dropdown */}
 			<nav
 				id="mobile-nav"
 				aria-label="Mobile navigation"
 				hidden={!menuOpen}
-				className={`md:hidden bg-[#0C071E]/95 backdrop-blur-xl border-b border-white/[0.05] px-6 pb-5 pt-2 ${menuOpen ? "" : "hidden"}`}
+				className={`border-t border-rule md:hidden ${menuOpen ? "" : "hidden"}`}
 			>
-				<ul className="flex flex-col gap-4" role="list">
-					{navLinks.map(({ href, label, external }) => (
-						<li key={href}>
-							<Link
-								href={href}
-								target={external ? "_blank" : undefined}
-								rel={external ? "noopener noreferrer" : undefined}
-								aria-current={pathname === href ? "page" : undefined}
-								className={`text-sm transition-colors ${
-									pathname === href ? "text-white" : "text-white/55"
-								}`}
-							>
-								{label}
-								{external && (
-									<span className="sr-only"> (opens in new tab)</span>
-								)}
-							</Link>
+				<Container as="ul" className="space-y-4 py-5" role="list">
+					{navLinks.map((l) => (
+						<li key={l.href} className="text-2xl">
+							{renderLink(l)}
 						</li>
 					))}
-				</ul>
+				</Container>
 			</nav>
 		</header>
 	);

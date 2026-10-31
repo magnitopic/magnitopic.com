@@ -1,42 +1,116 @@
 @import "tailwindcss";
-/* Syntax highlighting theme — scoped overrides below keep it consistent
-   with the site's dark navy palette */
-@import "highlight.js/styles/atom-one-dark.css";
 
-@theme {
-	--color-primary-50: #f0f9ff;
-	--color-primary-100: #e0f2fe;
-	--color-primary-200: #bae6fd;
-	--color-primary-300: #7dd3fc;
-	--color-primary-400: #38bdf8;
-	--color-primary-500: #0ea5e9;
-	--color-primary-600: #0284c7;
-	--color-primary-700: #0369a1;
-	--color-primary-800: #075985;
-	--color-primary-900: #0c4a6e;
+/* ── Design tokens ────────────────────────────────────────────
+   Swiss / Braun: flat paper, one ink, one accent, hairline rules.
+   Colours are CSS variables so light/dark is a single swap. */
+:root {
+	--paper: #f1efe8;
+	--paper-2: #e7e3d7;
+	--ink: #1b1a1c;
+	--graphite: #5f5d62;
+	--rule: rgba(27, 26, 28, 0.18);
+	--plum: #5b3f4d;
+}
 
-	--color-surface-primary: #0f172a;
-	--color-surface-secondary: #1e3a8a;
-	--color-surface-tertiary: #1e293b;
+@media (prefers-color-scheme: dark) {
+	:root {
+		--paper: #141315;
+		--paper-2: #1d1b1e;
+		--ink: #edeae2;
+		--graphite: #a09da3;
+		--rule: rgba(237, 234, 226, 0.2);
+		--plum: #c196ac;
+	}
+}
 
-	--color-content-primary: #ffffff;
-	--color-content-secondary: rgba(255, 255, 255, 0.9);
-	--color-content-muted: rgba(255, 255, 255, 0.7);
-	--color-content-subtle: rgba(255, 255, 255, 0.6);
-	--color-content-accent: #60a5fa;
+@theme inline {
+	--color-paper: var(--paper);
+	--color-paper-2: var(--paper-2);
+	--color-ink: var(--ink);
+	--color-graphite: var(--graphite);
+	--color-rule: var(--rule);
+	--color-plum: var(--plum);
+	--font-sans: "Switzer", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	--font-mono: ui-monospace, "SF Mono", "JetBrains Mono", Menlo, Consolas,
+		monospace;
 }
 
 @font-face {
-	font-family: "Switzer-Regular";
+	font-family: "Switzer";
 	src: url("../../public/fonts/Switzer-Medium.otf") format("opentype");
-	font-weight: normal;
+	font-weight: 100 900;
 	font-style: normal;
 	font-display: swap;
 }
 
-* {
-	font-family: "Switzer-Regular", sans-serif;
-	font-weight: 300;
+html {
+	background: var(--paper);
+	/* Only one real weight is shipped — never fake bold/italic */
+	font-synthesis: none;
+}
+
+body {
+	background: var(--paper);
+	color: var(--ink);
+	font-family: var(--font-sans);
+	font-weight: 400;
+	font-size: 1rem;
+	line-height: 1.5;
+	-webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+	font-weight: 500;
+}
+
+::selection {
+	background: var(--plum);
+	color: var(--paper);
+}
+
+/* ── Type helpers ─────────────────────────────────────────── */
+.display {
+	font-size: clamp(3.5rem, 11vw, 9.5rem);
+	line-height: 0.88;
+	letter-spacing: -0.045em;
+}
+
+.num {
+	font-family: var(--font-mono);
+	font-variant-numeric: tabular-nums;
+	font-size: 0.8125rem;
+	letter-spacing: 0;
+}
+
+/* Vertical label on the left rail — the rotated "ALEX-TREFF" motif */
+.rail-label {
+	writing-mode: vertical-rl;
+	transform: rotate(180deg);
+	text-transform: uppercase;
+	letter-spacing: 0.14em;
+	font-size: 0.75rem;
+	color: var(--graphite);
+	white-space: nowrap;
+}
+
+@media (max-width: 767px) {
+	.rail-label {
+		writing-mode: horizontal-tb;
+		transform: none;
+	}
+}
+
+/* Links: underline that turns plum */
+.link {
+	text-decoration: underline;
+	text-decoration-thickness: 1px;
+	text-underline-offset: 0.25em;
+	text-decoration-color: var(--rule);
+	transition: color 120ms, text-decoration-color 120ms;
+}
+.link:hover {
+	color: var(--plum);
+	text-decoration-color: currentColor;
 }
 
 /* ── Skip navigation link ─────────────────────────────────── */
@@ -45,183 +119,172 @@
 	top: -100%;
 	left: 1rem;
 	z-index: 9999;
-	padding: 0.5rem 1.25rem;
-	background: #1e3a8a;
-	color: #ffffff;
-	border-radius: 0 0 0.5rem 0.5rem;
+	padding: 0.5rem 1rem;
+	background: var(--ink);
+	color: var(--paper);
 	font-size: 0.875rem;
-	font-family: monospace;
 	text-decoration: none;
-	transition: top 0.1s;
 }
-
 .skip-link:focus {
 	top: 0;
-	outline: 2px solid #60a5fa;
-	outline-offset: 2px;
 }
 
 /* ── Keyboard focus ring ──────────────────────────────────── */
-/* Show a visible ring for every element focused via keyboard */
 *:focus-visible {
-	outline: 2px solid #60a5fa;
+	outline: 2px solid var(--ink);
 	outline-offset: 3px;
-	border-radius: 4px;
 }
-
-/* Strip the browser default when focused via pointer — we only
-   want the ring for keyboard navigation */
 *:focus:not(:focus-visible) {
 	outline: none;
 }
 
-/* ── Blog / Markdown content ─────────────────────────────── */
+/* ── Blog / Markdown content ──────────────────────────────── */
 .blog-content {
-	color: rgba(255, 255, 255, 0.72);
-	line-height: 1.8;
-	font-size: 1rem;
+	font-size: 1.125rem;
+	line-height: 1.65;
+	color: var(--ink);
 }
 
 .blog-content h1,
 .blog-content h2,
 .blog-content h3,
 .blog-content h4 {
-	color: rgba(255, 255, 255, 0.92);
-	font-weight: 700;
-	line-height: 1.3;
-	margin-top: 2.25em;
-	margin-bottom: 0.75em;
+	line-height: 1.2;
+	letter-spacing: -0.015em;
+	margin-top: 2.5em;
+	margin-bottom: 0.7em;
 }
-
-.blog-content h1 { font-size: 1.875rem; }
+.blog-content > :first-child {
+	margin-top: 0;
+	padding-top: 0;
+	border-top: 0;
+}
+.blog-content h1 { font-size: 2rem; }
 .blog-content h2 {
-	font-size: 1.375rem;
-	padding-bottom: 0.5em;
-	border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+	font-size: 1.5rem;
+	padding-top: 0.9em;
+	border-top: 1px solid var(--rule);
 }
-.blog-content h3 { font-size: 1.125rem; }
-.blog-content h4 { font-size: 1rem; color: rgba(255,255,255,0.75); }
+.blog-content h3 { font-size: 1.25rem; }
+.blog-content h4 { font-size: 1rem; color: var(--graphite); }
 
-.blog-content p { margin-bottom: 1.4em; }
+.blog-content p { margin-bottom: 1.3em; }
 
 .blog-content a {
-	color: #60a5fa;
 	text-decoration: underline;
-	text-underline-offset: 3px;
-	transition: color 0.15s;
+	text-decoration-thickness: 1px;
+	text-underline-offset: 0.25em;
+	color: var(--plum);
 }
-.blog-content a:hover { color: #93c5fd; }
+.blog-content a:hover { text-decoration-thickness: 2px; }
 
-/* Inline code */
 .blog-content :not(pre) > code {
-	background: rgba(255, 255, 255, 0.07);
-	border: 1px solid rgba(255, 255, 255, 0.1);
-	border-radius: 4px;
-	padding: 0.15em 0.45em;
-	font-size: 0.875em;
-	font-family: monospace;
-	color: #93c5fd;
+	background: var(--paper-2);
+	padding: 0.1em 0.35em;
+	font-size: 0.85em;
+	font-family: var(--font-mono);
 }
 
-/* Code blocks — the pre wraps hljs output */
 .blog-content pre {
-	border: 1px solid rgba(255, 255, 255, 0.08);
-	border-radius: 10px;
-	padding: 0;          /* padding lives on the inner .hljs element */
-	overflow: hidden;    /* keeps the rounded corners with the hljs bg */
-	margin-bottom: 1.5em;
+	margin-bottom: 1.6em;
+	background: var(--paper-2);
+	border-top: 1px solid var(--rule);
+	border-bottom: 1px solid var(--rule);
 }
-
-/* Let the hljs theme control the background, but nudge it closer to the
-   site's dark navy and ensure text doesn't get clipped */
 .blog-content pre > code.hljs {
 	display: block;
 	overflow-x: auto;
-	padding: 1.4em 1.6em;
-	font-size: 0.875rem;
+	padding: 1.25em 1.5em;
+	font-family: var(--font-mono);
+	font-size: 0.8125rem;
 	line-height: 1.7;
 	tab-size: 4;
-	background: #1a1d27;  /* slightly blue-shifted to blend with #0C071E */
-	border-radius: 9px;
+	background: transparent;
+	color: var(--ink);
 }
 
-/* Strip hljs default background/padding from inline code (it's only for blocks) */
-.blog-content :not(pre) > code.hljs {
-	display: inline;
-	background: rgba(255, 255, 255, 0.07);
-	color: #93c5fd;
-	padding: 0.15em 0.45em;
-	border-radius: 4px;
-	font-size: 0.875em;
-}
+/* Monochrome syntax theme: ink, graphite, one plum */
+.hljs-comment,
+.hljs-quote { color: var(--graphite); }
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-built_in,
+.hljs-type,
+.hljs-literal,
+.hljs-doctag { color: var(--plum); }
+.hljs-string,
+.hljs-number,
+.hljs-title,
+.hljs-title.function_,
+.hljs-attr,
+.hljs-attribute,
+.hljs-symbol,
+.hljs-meta { color: var(--ink); }
+.hljs-section,
+.hljs-title.class_ { text-decoration: underline; text-decoration-color: var(--rule); }
+.hljs-emphasis { font-style: italic; }
 
-/* Lists */
 .blog-content ul,
 .blog-content ol {
-	padding-left: 1.6em;
-	margin-bottom: 1.4em;
+	padding-left: 1.5em;
+	margin-bottom: 1.3em;
 }
-.blog-content ul { list-style-type: disc; }
+.blog-content ul { list-style-type: square; }
 .blog-content ol { list-style-type: decimal; }
-.blog-content li { margin-bottom: 0.45em; }
+.blog-content li { margin-bottom: 0.4em; }
+.blog-content li::marker { color: var(--graphite); }
 .blog-content li > ul,
-.blog-content li > ol { margin-top: 0.45em; margin-bottom: 0; }
+.blog-content li > ol { margin-top: 0.4em; margin-bottom: 0; }
 
-/* Blockquote */
+/* Blockquotes double as figure captions (`> Figure 1: …`) */
 .blog-content blockquote {
-	border-left: 3px solid rgba(96, 165, 250, 0.45);
-	padding: 0.25em 0 0.25em 1.25em;
-	color: rgba(255, 255, 255, 0.55);
-	font-style: italic;
-	margin-bottom: 1.4em;
+	border-left: 1px solid var(--ink);
+	padding-left: 1rem;
+	color: var(--graphite);
+	font-size: 0.875rem;
+	line-height: 1.5;
+	margin: -0.75em 0 1.8em;
 }
 .blog-content blockquote p { margin-bottom: 0; }
 
-/* Strong / em */
-.blog-content strong { color: rgba(255, 255, 255, 0.92); font-weight: 600; }
-.blog-content em { color: rgba(255, 255, 255, 0.8); }
+.blog-content strong { font-weight: 500; }
 
-/* Horizontal rule */
 .blog-content hr {
 	border: none;
-	border-top: 1px solid rgba(255, 255, 255, 0.08);
+	border-top: 1px solid var(--rule);
 	margin: 2.5em 0;
 }
 
-/* Images */
 .blog-content img {
 	max-width: 100%;
-	border-radius: 10px;
-	margin: 1.75em 0;
-	border: 1px solid rgba(255, 255, 255, 0.08);
+	height: auto;
+	margin: 2em 0 1em;
 }
 
-/* Tables */
 .blog-content table {
+	display: block;
+	overflow-x: auto;
 	width: 100%;
 	border-collapse: collapse;
-	margin-bottom: 1.5em;
-	font-size: 0.875rem;
+	margin-bottom: 1.6em;
+	font-size: 0.9375rem;
 }
 .blog-content th {
 	text-align: left;
-	padding: 0.6em 1em;
-	border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-	color: rgba(255, 255, 255, 0.55);
+	padding: 0.5em 0.75em 0.5em 0;
+	border-bottom: 1px solid var(--ink);
+	color: var(--graphite);
 	font-size: 0.75rem;
-	font-weight: 500;
 	text-transform: uppercase;
-	letter-spacing: 0.06em;
-	font-family: monospace;
+	letter-spacing: 0.1em;
+	font-weight: 500;
 }
 .blog-content td {
-	padding: 0.6em 1em;
-	border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+	padding: 0.55em 0.75em 0.55em 0;
+	border-bottom: 1px solid var(--rule);
 }
-.blog-content tr:last-child td { border-bottom: none; }
 
 /* ── Reduced motion ───────────────────────────────────────── */
-/* Respect the user's OS-level "reduce motion" preference */
 @media (prefers-reduced-motion: reduce) {
 	*,
 	*::before,
