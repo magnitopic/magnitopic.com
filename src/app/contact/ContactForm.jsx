@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { DotGrid } from "../../components/ui";
+import { PixelGlobe } from "../../components/ui";
 
 const inputClass =
 	"w-full border-0 border-b bg-transparent px-0 py-2 text-lg placeholder:text-graphite/60 focus:border-ink focus:outline-none focus-visible:outline-none transition-colors resize-none";
@@ -166,7 +166,7 @@ const ContactForm = () => {
 			<div aria-live="polite" role="status" className="min-h-6 text-sm">
 				{status === "ok" && (
 					<p className="flex items-center gap-3">
-						<DotGrid size={20} filled={[0, 1, 2, 3, 4, 5, 6, 7, 8]} />
+						<PixelGlobe size={32} />
 						Message sent. I&apos;ll get back to you soon.
 					</p>
 				)}

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { getAllPosts } from "../../lib/blog";
-import { Container, DotGrid } from "../../components/ui";
+import { Container, PixelGlobe } from "../../components/ui";
 
 export const metadata = {
 	title: "Blog",
@@ -32,7 +32,7 @@ export default function Blog() {
 			{posts.length === 0 ? (
 				<div className="border-t border-rule">
 					<Container className="flex items-center gap-4 py-16">
-						<DotGrid size={32} title="Empty" />
+						<PixelGlobe size={48} title="Empty" />
 						<p>Posts are on their way. Check back later.</p>
 					</Container>
 				</div>

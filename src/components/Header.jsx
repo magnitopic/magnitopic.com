@@ -2,7 +2,7 @@
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Container, DotGrid } from "./ui";
+import { Container, PixelGlobe } from "./ui";
 
 const navLinks = [
 	{ href: "/projects", label: "Projects" },
@@ -74,7 +74,7 @@ const Header = () => {
 					aria-label="Magnitopic — home"
 					className="col-span-8 flex items-center gap-3 md:col-span-3"
 				>
-					<DotGrid size={24} filled={[0, 4, 8]} />
+					<PixelGlobe size={32} />
 					<span className="text-sm">Alejandro Aparicio</span>
 				</Link>
 

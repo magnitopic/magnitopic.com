@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { DotGrid, Section, Container } from "../components/ui";
+import { PixelGlobe, Section, Container } from "../components/ui";
 import projects from "../../public/content/projects/cards.json";
 
 // ── Data ──────────────────────────────────────────────────────
@@ -106,11 +106,8 @@ export default function Home() {
 					className="hidden md:col-span-3 md:flex md:flex-col md:items-end md:justify-between"
 					aria-hidden="true"
 				>
-					<DotGrid
-						size={160}
-						filled={[0, 4, 8]}
-						className="w-full max-w-40"
-					/>
+					{/* 16 px per module keeps the bitmap crisp */}
+					<PixelGlobe size={256} />
 				</div>
 
 				<div className="md:col-span-3">
@@ -156,7 +153,7 @@ export default function Home() {
 						<li key={a} className="flex items-center gap-2">
 							<span
 								aria-hidden="true"
-								className="inline-block size-2 rounded-full bg-plum"
+								className="inline-block size-2 bg-plum"
 							/>
 							{a}
 						</li>
@@ -181,7 +178,7 @@ export default function Home() {
 									{job.current && (
 										<span
 											aria-hidden="true"
-											className="ml-2 inline-block size-2 rounded-full bg-plum align-middle"
+											className="ml-2 inline-block size-2 bg-plum align-middle"
 										/>
 									)}
 									{job.current && (

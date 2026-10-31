@@ -1,11 +1,11 @@
 import Link from "next/link";
-import { Container, DotGrid } from "./ui";
+import { Container, PixelGlobe } from "./ui";
 
 const Footer = () => (
 	<footer className="mt-24 border-t border-rule">
 		<Container className="grid grid-cols-2 gap-x-6 gap-y-8 py-10 text-sm md:grid-cols-12">
 			<div className="col-span-2 md:col-span-3">
-				<DotGrid size={32} filled={[0, 4, 8]} title="Magnitopic mark" />
+				<PixelGlobe size={48} title="Magnitopic mark" />
 			</div>
 			<p className="col-span-2 text-graphite md:col-span-5">
 				Alejandro Aparicio, aka Magnitopic.

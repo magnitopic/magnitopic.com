@@ -1,2 +1,2 @@
-export { default as DotGrid } from "./DotGrid";
+export { default as PixelGlobe } from "./PixelGlobe";
 export { default as Section, Container } from "./Section";
